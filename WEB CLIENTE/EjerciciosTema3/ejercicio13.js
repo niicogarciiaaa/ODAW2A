@@ -11,16 +11,16 @@ let ventana;
             // Comprobar si la ventana se ha abierto
         
                 
-                intervalo = setInterval(moverVentana, 100);
+                intervalo = setInterval(moverVentana, 10);
         
         }
 
         function moverVentana() {
           
 
-            if(abajo===false)ventana.moveBy(10,10);
+            if(abajo===false)ventana.moveBy(19,10);
             if(ventana.screenY>=759)abajo=true;
-            if(abajo===true)ventana.moveBy(-10,-10)
+            if(abajo===true)ventana.moveBy(-19,-10)
             if(ventana.screenY==0) abajo=false;
             
             
