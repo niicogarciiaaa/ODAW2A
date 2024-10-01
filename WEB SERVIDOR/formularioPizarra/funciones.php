@@ -1,0 +1,24 @@
+<?php
+
+/* 
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
+ */
+
+function esPalindromo($cadena){
+    $cadena= strtolower($cadena);
+    $cadena= str_replace(' ','',$cadena);
+     for ($i = 0, $j=mb_strlen($cadena)-1; $i <$j; $i++, $j--) {
+        if ($cadena[$i] != $cadena[$j]) {
+            return false;
+         
+        } else {
+           return true; 
+        }
+        
+        
+     }
+    
+    
+}
+?>
