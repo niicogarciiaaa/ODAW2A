@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Clientes</title>
-    
+    <script src="ejercicio3.js" defer></script>
 </head>
 <body>
-    <h1>Gestión de Clientes</h1>
+    <pre>
     <button onclick="mostrarTodosLosClientes()">Mostrar todos los clientes</button>
     <br>
-    <input type="text" id="localidadInput" placeholder="Introduce una localidad">
+    <label for="localidadInput">Introduce una localidad<input type="text" id="localidadInput" placeholder=""></label>
+
     <button onclick="mostrarClientesPorLocalidad()">Mostrar clientes por localidad</button>
     <br>
-    <input type="number" id="cuotaInput" placeholder="Introduce una cuota mínima">
+    <label for="cuotaInput">Introduce una cuota minima<input type="number" id="cuotaInput" placeholder=""></label>
     <button onclick="mostrarClientesPorCuota()">Mostrar clientes por cuota mayor</button>
-
+    </pre>
     <div id="resultado"></div>
 
-    <script src="ejercicio3.js"></script>
+    
 </body>
 </html>

@@ -46,7 +46,7 @@ function añadirPais() {
         return;
     }
 
-    mostrarResultado(`País añadido.<br/> Lista actual: ${paises.join(", ")}`);
+    mostrarResultado(`País añadido: ${pais}.<br/> Lista actual: ${paises.join(", ")}`);
 }
 
 // Borrar un país
@@ -55,14 +55,14 @@ function borrarPais() {
 
     let borrado;
     if (lugar === '1') {
-        const result = arrays.borrarElementoPrincipio(paises);
+        const resultado = arrays.borrarElementoPrincipio(paises);
         
-        paises = result.array; // Actualiza el array
-        borrado = result.elementoBorrado;
+        paises = resultado.array; // Actualiza el array
+        borrado = resultado.elementoBorrado;
     } else if (lugar === '2') {
-        const result = arrays.borrarElementoFinal(paises);
-        paises = result.array; // Actualiza el array
-        borrado = result.elementoBorrado;
+        const resultado = arrays.borrarElementoFinal(paises);
+        paises = resultado.array; // Actualiza el array
+        borrado = resultado.elementoBorrado;
     } else {
         mostrarResultado("Opción no válida.");
         return;
@@ -76,7 +76,7 @@ function consultarPais() {
     const tipoConsulta = prompt("¿Cómo quieres consultar? (1: Por posición, 2: Por nombre)");
 
     if (tipoConsulta === '1') {
-        const posicion = parseInt(prompt("Introduce la posición del país (empezando desde 0):"));
+        const posicion = prompt("Introduce la posición del país (empezando desde 0):");
         const pais = arrays.mostrarElementoPorPosicion(paises, posicion);
         mostrarResultado(`El país en la posición ${posicion} es: ${pais}`);
     } else if (tipoConsulta === '2') {

@@ -50,7 +50,7 @@ body {
         button:hover {
             background-color: greenyellow; /* Color al pasar el mouse */
             color:black;
-            transform: translateY(-5px); /* Efecto de elevación */
+            transform: translateY(-7px); /* Efecto de elevación */
         }
 
         button:active {

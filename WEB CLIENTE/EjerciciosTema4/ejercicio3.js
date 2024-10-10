@@ -68,15 +68,16 @@ function generarTabla(arrayClientes) {
                         <th>Localidad</th>
                         <th>Cuota</th>
                     </tr>`;
-    
-    arrayClientes.forEach(cliente => {
+
+    for (let i = 0; i < arrayClientes.length; i++) {
         tabla += `<tr>
-                    <td>${cliente.nombre}</td>
-                    <td>${cliente.localidad}</td>
-                    <td>${cliente.cuota}</td>
+                    <td>${arrayClientes[i].nombre}</td>
+                    <td>${arrayClientes[i].localidad}</td>
+                    <td>${arrayClientes[i].cuota}</td>
                   </tr>`;
-    });
+    }
 
     tabla += `</table>`;
     return tabla;
 }
+

@@ -1,12 +1,6 @@
 function buscarDNIs() {
     const letra = document.getElementById('letraInput').value.toUpperCase();
-    const resultadoDiv = document.getElementById('resultado');
-
-    // Validar que la letra esté entre A y Z
-    if (!/^[A-Z]$/.test(letra)) {
-        resultadoDiv.innerHTML = 'Introduce una letra válida de la A a la Z.';
-        return;
-    }
+        
 
     const letrasDNI = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
     const dnisConLetra = [];
@@ -20,10 +14,10 @@ function buscarDNIs() {
     }
 
     // Filtrar DNIs que contienen la letra especificada
-    const dnisFiltrados = dnisConLetra.filter(dni => dni.includes(letra));
+    const dnisFiltrados = dnisConLetra.filter(dni => dni.endsWith(letra));
 
     // Mostrar resultados
-    resultadoDiv.innerHTML = dnisFiltrados.length > 0
-        ? `Hay ${dnisFiltrados.length} DNI(s) que contienen la letra "${letra}":<br>${dnisFiltrados.join(', ')}`
-        : `No hay DNIs que contengan la letra "${letra}".`;
+    document.getElementById('resultado').innerHTML =
+         `Hay ${dnisFiltrados.length} DNI(s) que contienen la letra "${letra}":<br>${dnisFiltrados}`
+         
 }

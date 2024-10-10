@@ -34,7 +34,7 @@ export function añadirElementoFinal(array, elemento) {
 
 // Función para borrar un elemento al principio del array
 export function borrarElementoPrincipio(array) {
-    const elementoBorrado = array.shift();
+    let elementoBorrado = array.shift();
     return { array, elementoBorrado };
 }
 
