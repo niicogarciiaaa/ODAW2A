@@ -1,0 +1,88 @@
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Controles de Entrada</title>
+    </head>
+    <body>
+
+        <h1>Controles de Entrada</h1>
+
+        <form action="procesarFormulario.php" method="POST" enctype="text/plain">
+
+            <h2>Elementos de pisos ENTRADA</h2>
+
+            <h3>TEXTO</h3>
+            Introduzca la Cadena A Buscar:
+            <input type="text" name="cadena" value="valor por defecto" size="20">
+            <hr>
+
+            <h3>RADIO</h3>
+            Sexo:
+            <input type="radio" name="sexo" value="mujer" checked="">Mujer
+            <input type="radio" name="sexo" value="hombre">Hombre
+            <hr>
+
+            <h3>CHECKBOX</h3>
+            Extras:
+            <input type="checkbox" name="extras[]" value="garaje" checked="">Garaje
+            <input type="checkbox" name="extras[]" value="piscina">Piscina
+            <input type="checkbox" name="extras[]" value="jardin">Jardín
+            <hr>
+
+
+            <h3>ARCHIVO</h3>
+            Fichero:
+            <input type="file" name="fichero">
+            <hr>
+
+            <h3>HIDDEN</h3>
+            <input type="hidden" name="username" value="mariano">
+            <hr>
+
+            <h3>CONTRASEÑA</h3>
+            Contraseña: <input type="password" name="clave">
+            <hr>
+
+            <h3>ENVIAR</h3>
+            <input type="submit" name="enviar" value="Enviar Datos">
+            <hr>
+
+            <h2>Elemento SELECT</h2>
+
+            <h3>Seleccione Simple</h3>
+            Color:
+
+            <select name="color">
+                <option value="rojo" selected="">Rojo</option>
+                <option value="verde">Verde</option>
+                <option value="azul">Azul
+                </option>
+            </select>
+            <hr>
+
+            <h3>Selección múltiple</h3>
+            Idiomas:
+
+            <select multiple="" size="3" name="idiomas[]">
+                <option value="ingles" selected="">Inglés</option>
+                <option value="frances">Francés</option>
+                <option value="aleman">Alemán</option>
+                <option value="holandes">Holandés</option>
+            </select>
+            <hr>
+
+            <h2>Elemento TEXTAREA</h2>
+            Comentario:
+            <textarea cols="50" rows="5" name="comentario">Escribe una opinión ...
+            </textarea>
+            <br><br>
+            <hr>
+
+            <br>
+            <input type="submit" name="enviar" value="Enviar">
+            <input type="reset" value="Borrar datos">
+
+        </form>
+
+    </body>
+</html>

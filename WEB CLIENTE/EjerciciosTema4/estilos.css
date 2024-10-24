@@ -1,0 +1,61 @@
+body {
+            font-family: 'Arial', sans-serif;
+           
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centrar el contenido horizontalmente */
+            justify-content: center; /* Centrar el contenido verticalmente */
+            height: 100vh; /* Altura completa de la ventana */
+        }
+
+        h1 {
+            color: #343a40; /* Color del título */
+            margin-bottom: 20px; /* Espacio debajo del título */
+        }
+
+        #resultado {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 110%;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ced4da; /* Borde alrededor del resultado */
+            background-color: #fff; /* Fondo blanco para el resultado */
+            border-radius: 5px; /* Esquinas redondeadas */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            width: 80%; /* Ancho del área de resultado */
+            max-width: 600px; /* Ancho máximo */
+            text-align: center; /* Centrar texto en el área de resultado */
+        }
+        #resultado:hover{
+            font-size: 125%;
+            font-weight: bold;
+            background-color: greenyellow;
+        }
+
+        button {
+            padding: 10px 20px; /* Espaciado dentro del botón */
+            margin: 5px; /* Espaciado entre botones */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Esquinas redondeadas */
+            background-color: #007bff; /* Color de fondo azul */
+            color: white; /* Color del texto en blanco */
+            font-size: 16px; /* Tamaño de fuente */
+            cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de transición al pasar el mouse */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra del botón */
+        }
+
+        button:hover {
+            background-color: greenyellow; /* Color al pasar el mouse */
+            color:black;
+            transform: translateY(-7px); /* Efecto de elevación */
+        }
+
+        button:active {
+            background-color: #004085; /* Color al hacer clic */
+            transform: translateY(0); /* Regresar a la posición original */
+        }
+
+        
