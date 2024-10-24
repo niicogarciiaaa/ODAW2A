@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Juego de Memoria</title>
+    <script src="ejercicio6.js"></script>
+    <style>
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        
+        td {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        img {
+            display: none;
+            width: 100px;
+            height: 100px;
+        }
+
+        #aciertos {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        #mensaje {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    
+
+<h1 style="text-align:center">Juego de Memoria</h1>
+<div id="mensaje"></div>
+<table id="tabla">
+    <!-- Aquí se generará la tabla de cartas dinámicamente -->
+</table>
+
+<div id="aciertos">Aciertos: 0</div>
+
+
 </body>
 </html>
