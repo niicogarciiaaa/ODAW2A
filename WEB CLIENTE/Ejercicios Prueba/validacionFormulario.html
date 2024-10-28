@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Formulario</title>
+    <script src="validacionFormularios.js" defer></script>
+    <style>
+        .error {
+            border: solid 12px #FF0000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario de Registro</h1>
+    <form action="procesar.php" method="post" id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br><br>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono"><br><br>
+
+        <label>Fecha de nacimiento:</label>
+        <input type="text" id="dia" size="2" placeholder="DD">
+        <input type="text" id="mes" size="2" placeholder="MM">
+        <input type="text" id="ano" size="4" placeholder="AAAA"><br><br>
+
+        <label>Sexo:</label>
+        <input type="radio" name="sexo" value="H" checked> Hombre
+        <input type="radio" name="sexo" value="M"> Mujer<br><br>
+
+        <label for="mayor">Soy mayor de 18 años:</label>
+        <input type="checkbox" id="mayor" name="mayor"><br><br>
+
+        <input type="submit" id="enviar" value="Enviar">
+        <input type="reset" id="borrar" value="Borrar">
+    </form>
+</body>
+</html>

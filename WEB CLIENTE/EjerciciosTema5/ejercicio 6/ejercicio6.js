@@ -18,7 +18,10 @@ const imagenes = ['azul.png', 'verde.png', 'rojo.png', 'morado.png', 'amarillo.p
             for (let col = 0; col < 4; col++) {
                 const td = document.createElement('td');
                 const img = document.createElement('img');
-                img.src = paresImagenes[indiceImagen];
+    
+                // Configurar la imagen de dorso inicialmente
+                img.src = paresImagenes[indiceImagen]; // Guardar la imagen real
+                
                 td.appendChild(img);
                 td.addEventListener('click', mostrarImagen);
                 tr.appendChild(td);
@@ -55,7 +58,7 @@ const imagenes = ['azul.png', 'verde.png', 'rojo.png', 'morado.png', 'amarillo.p
                 primeraCarta.style.display = 'none';
                 segundaCarta.style.display = 'none';
                 resetearCartas(false);
-            }, 1000);
+            }, 2000);
         }
     }
 

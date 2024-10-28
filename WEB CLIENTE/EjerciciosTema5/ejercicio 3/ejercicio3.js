@@ -1,4 +1,4 @@
-document.addEventListener("keyup",calcularLetra)
+document.addEventListener("keyup",calcularLetra);
  
 
 function calcularLetra() {
