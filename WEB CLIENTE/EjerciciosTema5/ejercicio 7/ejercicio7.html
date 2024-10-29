@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <form action="" method="post">
+        
+        <p>fecha</p>
+        <input type="text" pattern="[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]" title=" el formato de fecha es dd/mm/aaaa"/><br/>
+
+        <p>Empleado</p>
+        <input type="text" pattern="[A-Z]{2}[^a-zA-Z0-9][0-9]{4}$" title="Debe tener el formato: dos letras mayúsculas, un símbolo y cuatro dígitos (ej. WW$1234)"><br/>
+
+        <p>Destinatario</p>
+        <input type="text" pattern="[A-Z]{2,3}_[A-Z][a-z]+:[0-9]{4}$" title="Debe tener el formato: dos o tres letras mayúsculas, un guion bajo, el nombre de la ciudad con la primera letra en mayúscula y el resto en minúsculas, dos puntos, y un código de distrito de cuatro dígitos (ej. NM_Madrid:1234)"><br/>
+
+        <p>Peso en gramos</p>
+        <input type="number" min="100" max="5000" title="Mínimo 100 y máximo 5000"><br/>
+
+        <p>Numero de Cuenta</p>
+        <input type="text" pattern="IBAN[0-9]{20}">
+
+      <input type="submit">
+    </form>
+  </body>
 </html>

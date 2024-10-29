@@ -1,11 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Test de Fórmula 1</title>
+    <script src="ejercicio8.js" defer></script>
+    <style>
+        .correcto {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrecto {
+            color: red;
+            font-weight: bold;
+        }
+        .sin-responder {
+            background-color: #f8d7da;
+        }
+        .icono {
+            font-size: 1.2em;
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h2>Test de Fórmula 1</h2>
+    <form id="testForm">
+        <div id="pregunta1">
+            <p>1. ¿En qué año y circuito se logró la primera victoria de Ayrton Senna en Fórmula 1?</p>
+            <label><input type="radio" name="P1" value="incorrecto">1984, Gran Premio Mónaco</label><br>
+            <label><input type="radio" name="P1" value="correcto">1985, Gran Premio Portugal</label><br>
+            <label><input type="radio" name="P1" value="incorrecto">1986, Gran Premio Brasil</label><br>
+        </div>
+
+        <div id="pregunta2">
+            <p>2. ¿Cuál es el único equipo que ha ganado campeonatos de Fórmula 1 con motores de tres fabricantes diferentes?</p>
+            <label><input type="radio" name="P2" value="incorrecto">Williams</label><br>
+            <label><input type="radio" name="P2" value="correcto">McLaren</label><br>
+            <label><input type="radio" name="P2" value="incorrecto">Lotus</label><br>
+        </div>
+
+        <div id="pregunta3">
+            <p>3. ¿En qué temporada un piloto ganó el campeonato sin lograr ninguna pole position durante todo el año?</p>
+            <label><input type="radio" name="P3" value="correcto">1982</label><br>
+            <label><input type="radio" name="P3" value="incorrecto">2009</label><br>
+            <label><input type="radio" name="P3" value="incorrecto">2016</label><br>
+        </div>
+
+        <div id="pregunta4">
+            <p>4. ¿Cuál es el circuito actual con el mayor número de curvas en el calendario de Fórmula 1?</p>
+            <label><input type="radio" name="P4" value="incorrecto">Yas Marina (Circuito de Abu Dhabi)</label><br>
+            <label><input type="radio" name="P4" value="incorrecto">Circuito de Singapur</label><br>
+            <label><input type="radio" name="P4" value="correcto">Circuito de Jeddah</label><br>
+        </div>
+
+        <button type="button" onclick="calcularResultado()">Enviar respuestas</button>
+    </form>
+
+    <p id="resultado"></p>
 </body>
 </html>

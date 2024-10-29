@@ -3,8 +3,8 @@ const numerosSorteo = [5, 16, 23, 34, 42];
 // Array con los números en el orden de aparición
 const numerosAparicion = [34, 5, 23, 42, 16];
 
-document.getElementById("numeros");
-const textoOrdenar = document.getElementById("ordenar");
+// document.getElementById("numeros");
+// const textoOrdenar = document.getElementById("ordenar");
 
 // Función para mostrar los números en pantalla
 function mostrarNumeros(numeros) {
