@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Clave</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f3f3;
+        }
+        .table-container {
+            text-align: center;
+            width: 200px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .grid button {
+            padding: 10px;
+            background-color: #FF9900;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+        .grid button:hover {
+            background-color: #e68900;
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <h2>Introduce tu clave de seguridad</h2>
+    <div class="grid" id="numberGrid"></div>
+</div>
+
+<script>
+    // Obtener clave correcta desde localStorage (simulación)
+    const claveCorrecta = localStorage.getItem("claveCorrecta") || "1234";
+
+    // Generar una lista de números del 0 al 9 en posiciones aleatorias
+    function generarNumerosAleatorios() {
+        const numeros = Array.from({ length: 10 }, (_, i) => i);
+        for (let i = numeros.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [numeros[i], numeros[j]] = [numeros[j], numeros[i]];
+        }
+        return numeros;
+    }
+
+    // Mostrar números en la cuadrícula
+    const numberGrid = document.getElementById("numberGrid");
+    const numerosAleatorios = generarNumerosAleatorios();
+    let claveIngresada = "";
+
+    numerosAleatorios.forEach(numero => {
+        const button = document.createElement("button");
+        button.textContent = numero;
+        button.addEventListener("click", () => {
+            claveIngresada += numero;
+            if (claveIngresada.length === claveCorrecta.length) {
+                if (claveIngresada === claveCorrecta) {
+                    alert("Bienvenido(a) a tu cuenta bancaria");
+                } else {
+                    alert("Clave incorrecta. Inténtalo de nuevo.");
+                }
+                claveIngresada = ""; // Reiniciar para reintentar
+            }
+        });
+        numberGrid.appendChild(button);
+    });
+</script>
+
+</body>
+</html>
