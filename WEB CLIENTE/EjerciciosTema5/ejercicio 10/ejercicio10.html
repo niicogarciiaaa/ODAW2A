@@ -3,140 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenida - Banco ING</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f3f3f3;
-        }
-        .form-container {
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            border-radius: 8px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .form-group button {
-            width: 100%;
-            padding: 10px;
-            background-color: #FF9900;
-            border: none;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .form-group button:hover {
-            background-color: #e68900;
-        }
-        .form-group .checkbox {
-            display: flex;
-            align-items: center;
-        }
-        .form-group .checkbox label {
-            margin-left: 5px;
-        }
-    </style>
+    <title>Bienvenida Banco</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script defer src="ejercicio10.js"></script>
 </head>
 <body>
-
-<div class="form-container">
-    <h2>Bienvenida - Banco ING</h2>
-    <form id="loginForm">
-        <div class="form-group">
-            <label for="dni">DNI/Tarjeta de residencia/Pasaporte</label>
+    <div class="login-container">
+        <h2>Bienvenido al Banco ING</h2>
+        <form id="loginForm">
+            <label for="dni">DNI/Tarjeta de residencia/Pasaporte:</label>
             <input type="text" id="dni" required>
-        </div>
-        <div class="form-group">
-            <label for="dob">Fecha de nacimiento</label>
-            <input type="date" id="dob" required>
-        </div>
-        <div class="form-group">
-            <label for="clave">Clave de seguridad</label>
+
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" required>
+
+            <label for="clave">Clave:</label>
             <input type="password" id="clave" required>
-        </div>
-        <div class="form-group checkbox">
-            <input type="checkbox" id="rememberMe">
-            <label for="rememberMe">Recordar mis datos</label>
-        </div>
-        <div class="form-group">
+
+            <label>
+                <input type="checkbox" id="recordar"> Recordar mis datos
+            </label>
             <button type="submit">Entrar</button>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 
-<script>
-    class Cliente {
-        constructor(dni, dob, clave) {
-            this.dni = dni;
-            this.dob = dob;
-            this.clave = clave;
-        }
-    }
-
-    // Datos simulados de clientes
-    const clientes = [
-        new Cliente("12345678X", "1990-05-15", "1234"),
-        new Cliente("87654321Y", "1985-10-22", "5678")
-    ];
-
-    document.addEventListener("DOMContentLoaded", function() {
-        const dniField = document.getElementById("dni");
-        const dobField = document.getElementById("dob");
-        const claveField = document.getElementById("clave");
-        const rememberMe = document.getElementById("rememberMe");
-
-        // Cargar datos de cliente desde WebStorage si existen
-        if (localStorage.getItem("dni") && localStorage.getItem("dob")) {
-            dniField.value = localStorage.getItem("dni");
-            dobField.value = localStorage.getItem("dob");
-            rememberMe.checked = true;
-        }
-
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevenir el envío del formulario
-
-            const dni = dniField.value;
-            const dob = dobField.value;
-            const clave = claveField.value;
-
-            const clienteEncontrado = clientes.find(cliente => cliente.dni === dni && cliente.dob === dob && cliente.clave === clave);
-            
-            if (clienteEncontrado) {
-                // Guardar datos en WebStorage si está marcado
-                if (rememberMe.checked) {
-                    localStorage.setItem("dni", dni);
-                    localStorage.setItem("dob", dob);
-                } else {
-                    localStorage.removeItem("dni");
-                    localStorage.removeItem("dob");
-                }
-                // Redirigir a la pantalla de validación
-                window.location.href = "validacion_clave.html";
-            } else {
-                alert("Datos incorrectos. Por favor, inténtelo de nuevo.");
-            }
-        });
-    });
-</script>
-
+    <div id="validacionClave" class="hidden">
+        <h2>Validación de Clave de Seguridad</h2>
+        <p>Selecciona los números faltantes de tu clave</p>
+        <div id="claveParcial"></div>
+        <div id="tablaNumeros"></div>
+    </div>
+    
 </body>
 </html>
