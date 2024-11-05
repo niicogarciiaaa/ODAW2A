@@ -1,0 +1,90 @@
+/* Estilos generales del contenedor */
+#contenedor {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para los títulos */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo de los campos de entrada */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo para las etiquetas */
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Estilo de los mensajes de error */
+.errorCampo {
+    border: 1px solid red;
+}
+
+.errorEtiqueta {
+    color: red;
+}
+
+/* Estilo del botón de envío */
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para los párrafos */
+p {
+    text-align: center;
+    color: #777;
+}
+
+/* Estilo del pie de página */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #f1f1f1;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilo para el texto negrita */
+.negrita {
+    font-weight: bold;
+}
+
+/* Estilo para los enlaces en span */
+.span1,
+.span2 {
+    color: #0073e6;
+    cursor: pointer;
+}
+
+.span1:hover,
+.span2:hover {
+    text-decoration: underline;
+}

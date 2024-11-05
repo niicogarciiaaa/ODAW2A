@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="ejercicio9.css">
+    <script src="tema5_Ej9.js" defer></script>
+</head>
+<body>
+    <div id="contenedor">
+        <p><img src="img/amazon.png" alt="" width="100px"/>.es</p>
+        <fieldset>
+            <h2>Crear cuenta</h2>
+            <form id="formulario">
+                <label for="nombre" class="campo" id="label1">Nombre</label><br>
+                <input type="text" id="nombre" placeholder="Nombre y apellidos" required><br><br>
+
+                <label for="movilCorreo" class="campo" id="label2">Número de móvil o dirección de correo electrónico</label><br>
+                <input type="text" id="movilCorreo" required><br><br>
+
+                <label for="contrasenha" class="campo" id="label3">Contraseña</label><br>
+                <input type="password" id="contrasenha" placeholder="Al menos 6 caracteres" required><br><br>
+
+                <label for="confirmarContrasenha" class="campo" id="label4">Confirma tu contraseña</label><br>
+                <input type="password" id="confirmarContrasenha" required><br><br>
+
+                <input type="submit" name="enviar" value="Continuar" id="envio"/><br>
+                <p>
+                    Al crear una cuenta, aceptas las <span class="span1">Condiciones de uso y venta</span> de Amazon. Consulta el <span class="span1">Aviso de privacidad</span>,
+                    el <span class="span1">Aviso de cookies</span> y el <span class="span1">Aviso de anuncios basados en intereses.</span>
+                </p><br>
+                <p>
+                    <span class="negrita">¿Compras para tu empresa?</span>
+                </p>
+                <p>
+                    <span class="span2">Crea una cuenta de empresa gratuita</span>
+                </p><br>
+                <p>
+                    ¿Ya tienes una cuenta?<span class="span1">Iniciar sesión</span>
+                </p><br>
+            </form>
+        </fieldset>
+    </div>
+    <footer>
+        <p align="center">
+            <span class="footer">Condiciones de uso  Aviso de privacidad  Ayuda  Cookies  Publicidad basada en intereses</span>
+        </p><br><br>
+        <p align="center">
+            © 1996-2024, Amazon.com, Inc. o sus afiliados
+        </p>
+    </footer>
+</body>
+</html>

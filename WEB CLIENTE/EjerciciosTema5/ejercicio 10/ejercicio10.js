@@ -1,110 +1,147 @@
 class Cliente {
-    constructor(dni, fechaNacimiento, clave) {
-        this.dni = dni;
-        this.fechaNacimiento = fechaNacimiento;
-        this.clave = clave;
-    }
+  constructor(dni, fechaNacimiento, clave) {
+    this.dni = dni;
+    this.fechaNacimiento = fechaNacimiento;
+    this.clave = clave;
+  }
 }
 
-// Datos simulados de clientes
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("loginForm");
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Evita que se envíe el formulario
+
+      // Puedes guardar los datos en localStorage aquí, si lo deseas
+
+      // Redirigir a la siguiente ventana
+      window.location.href = "validacionClave.html"; // Cambia a la página de validación
+    });
+  }
+
+  // Aquí iría el resto de tu código
+});
+
+// Array de clientes
+// Suponiendo que tienes un array de clientes ya definido
 const clientes = [
-    new Cliente("12345678A", "1980-05-12", "1234"),
-    new Cliente("87654321B", "1975-10-22", "5678"),
+  new Cliente("12345678A", "2000-01-01", [1, 2, 3, 4]), // Ejemplo de cliente
+  new Cliente("87654321B", "1990-05-15", [5, 6, 7, 8]), // Ejemplo de cliente
+  new Cliente("23456789C", "1985-09-30", [9, 0, 1, 2]), // Ejemplo de cliente
 ];
 
-// Variables para guardar elementos y datos
-const dniField = document.getElementById("dni");
-const fechaNacimientoField = document.getElementById("fechaNacimiento");
-const claveField = document.getElementById("clave");
-const recordarCheckbox = document.getElementById("recordar");
-const loginForm = document.getElementById("loginForm");
-const validacionClaveDiv = document.getElementById("validacionClave");
-const tablaClave = document.getElementById("tablaClave");
+// Función para seleccionar una clave aleatoria de los clientes
+function seleccionarClaveAleatoria() {
+  const clienteAleatorio =
+    clientes[Math.floor(Math.random() * clientes.length)];
+  return clienteAleatorio.clave; // Devuelve la clave del cliente seleccionado
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Cargar datos del localStorage si existen
-    if (localStorage.getItem("dni")) {
-        dniField.value = localStorage.getItem("dni");
-        fechaNacimientoField.value = localStorage.getItem("fechaNacimiento");
-        recordarCheckbox.checked = true;
-    }
-
-    // Validación y acceso
-    loginForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        const dni = dniField.value;
-        const fechaNacimiento = fechaNacimientoField.value;
-        const clave = claveField.value;
-
-        // Buscar cliente en la base simulada
-        const cliente = clientes.find(c => c.dni === dni && c.fechaNacimiento === fechaNacimiento && c.clave === clave);
-
-        if (cliente) {
-            if (recordarCheckbox.checked) {
-                localStorage.setItem("dni", dni);
-                localStorage.setItem("fechaNacimiento", fechaNacimiento);
-            } else {
-                localStorage.removeItem("dni");
-                localStorage.removeItem("fechaNacimiento");
-            }
-
-            mostrarValidacionClave(cliente);
-        } else {
-            alert("Datos incorrectos. Inténtelo de nuevo.");
-        }
-    });
+// Cargar y generar huecos
+let claveCorrecta = seleccionarClaveAleatoria(); // Clave correcta seleccionada
+const tabla = document.getElementById("huecosContainer");
+// Generar los huecos en el contenedor
+claveCorrecta.forEach((num) => {
+  const hueco = document.createElement("div");
+  hueco.classList.add("hueco");
+  hueco.textContent = "."; // Mostrar un punto inicialmente
+  huecosContainer.appendChild(hueco);
 });
-// Mostrar la ventana de validación de clave y generar los números en posiciones aleatorias
-function mostrarValidacionClave(cliente) {
-    loginForm.classList.add("hidden"); // Oculta el formulario de login
-    validacionClaveDiv.classList.remove("hidden"); // Muestra la ventana de validación de clave
 
-    // Genera números del 0 al 9 en orden aleatorio
-    const numeros = Array.from({ length: 10 }, (_, i) => i.toString());
-    numeros.sort(() => Math.random() - 0.5);
+// Generar números desordenados
+const numerosDesordenados = shuffle(Array.from({ length: 10 }, (_, i) => i));
 
-    // Clave parcial con espacios en blanco en posiciones aleatorias
-    let claveParcial = cliente.clave.split('');
-    const posicionesFaltantes = [0, 1, 2, 3].sort(() => Math.random() - 0.5).slice(0, 2);
+// Función para crear los botones
+function crearBotones() {
+  const container = document.getElementById("botonesContainer");
+console.log(claveCorrecta);
+  // Crear la primera fila de botones
+  const filaBotones1 = document.createElement("div");
+  filaBotones1.classList.add("fila-botones");
+  for (let j = 0; j < 5; j++) {
+    const numero = numerosDesordenados[j]; // Obtener el número correspondiente
+    const btn = document.createElement("button");
+    
+    btn.textContent = numero;
+    btn.style.color = "#FF6200  "; // Asignar el color del texto a naranja
+    btn.onclick = function () {
+      agregarNumeroAlHueco(numero);
+    };
+    filaBotones1.appendChild(btn);
+  }
+  container.appendChild(filaBotones1); // Agregar la primera fila al contenedor
 
-    posicionesFaltantes.forEach(pos => claveParcial[pos] = "_"); // Espacios aleatorios para completar la clave
-    document.getElementById("claveParcial").textContent = claveParcial.join(" "); // Muestra clave parcial
+  // Crear la segunda fila de botones
+  const filaBotones2 = document.createElement("div");
+  filaBotones2.classList.add("fila-botones");
+  for (let j = 5; j < 10; j++) {
+    const numero = numerosDesordenados[j]; // Obtener el número correspondiente
+    const btn = document.createElement("button");
+    
+    btn.textContent = numero;
+    btn.style.color = "#FF6200"; // Asignar el color del texto a naranja
+    btn.onclick = function () {
+      agregarNumeroAlHueco(numero);
+    };
+    filaBotones2.appendChild(btn);
+  }
+  container.appendChild(filaBotones2); // Agregar la segunda fila al contenedor
 
-    // Genera la tabla de números
-    tablaNumeros.innerHTML = numeros
-        .map(numero => `<button onclick="completarClave('${numero}', '${cliente.clave}', ${JSON.stringify(posicionesFaltantes)})">${numero}</button>`)
-        .join("");
+  // Agregar el botón de enviar en otra línea
+
+
 }
 
-let claveIngresada = []; // Arreglo para almacenar los números seleccionados
-
-// Función para completar los números de la clave faltantes
-function completarClave(numero, claveCorrecta, posicionesFaltantes) {
-    if (claveIngresada.length < posicionesFaltantes.length) {
-        claveIngresada.push(numero); // Añadir número seleccionado a la clave ingresada
-        actualizarClaveParcial(numero, posicionesFaltantes.shift());
-
-        if (claveIngresada.length === 2) { // Cuando se completan los huecos
-            validarClave(claveIngresada.join(""), claveCorrecta);
-        }
+// Función para agregar el número al hueco
+function agregarNumeroAlHueco(numero) {
+    const huecos = document.querySelectorAll(".hueco"); // Seleccionar todos los huecos
+    let numeroColocado = false;
+  
+    for (let hueco of huecos) {
+      if (hueco.textContent === ".") {
+        hueco.textContent = ""; // Limpiar el contenido
+        hueco.setAttribute("placeholder", numero); // Poner el número como placeholder
+        numeroColocado = true;
+        break; // Salir del bucle después de reemplazar
+      }
     }
-}
-
-// Actualiza la visualización de la clave parcial
-function actualizarClaveParcial(numero, posicion) {
-    const claveDisplay = document.getElementById("claveParcial").textContent.split(" ");
-    claveDisplay[posicion] = numero;
-    document.getElementById("claveParcial").textContent = claveDisplay.join(" ");
-}
-
-// Valida la clave ingresada comparándola con la clave correcta del cliente
-function validarClave(claveIngresada, claveCorrecta) {
-    const claveCompleta = claveCorrecta.replace("_", claveIngresada);
-    if (claveCompleta === claveCorrecta) {
-        alert("¡Bienvenido a su cuenta!");
-    } else {
-        alert("Clave incorrecta. Inténtelo de nuevo.");
-        location.reload(); // Reinicia para otro intento
+  
+    // Verificar si todos los huecos están llenos después de agregar un número
+    const todosLlenos = Array.from(huecos).every(hueco => hueco.getAttribute("placeholder") !== ".");
+    if (todosLlenos) {
+      validarClave(); // Llamar a la función de validación automáticamente
     }
+  }
+  
+
+// Función para validar la clave
+function validarClave() {
+  const claveIngresada = Array.from(document.querySelectorAll(".hueco"))
+    .map((hueco) => {
+      return hueco.textContent === "." ? "?" : hueco.textContent;
+    })
+    .join("");
+
+  if (claveIngresada === claveCorrecta.join("")) {
+    document.getElementById("correctoIncorrecto").classList.add("correcto");
+    document.getElementById("correctoIncorrecto").innerHTML =
+      "¡Clave correcta! ¡Bienvenido!";
+  } else {
+    document.getElementById("correctoIncorrecto").classList.add("incorrecto");
+    document.getElementById("correctoIncorrecto").innerHTML =
+      "Clave incorrecta. Inténtalo de nuevo.";
+  }
+}
+
+// Llama a la función para crear los botones y los huecos al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+  crearBotones();
+});
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }

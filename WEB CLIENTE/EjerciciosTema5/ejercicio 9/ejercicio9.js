@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(idCampo).classList.add('error');
         document.getElementById(idEtiqueta).classList.add('error-label');
     }
+    
 
     function removerError(idCampo, idEtiqueta) {
         document.getElementById(idCampo).classList.remove('error');
@@ -73,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (validacionCorrecta) {
             // Guardar el nombre en localStorage para que esté disponible al recargar
             localStorage.setItem("nombre", nombreUsuarioField.value);
-            alert("¡Cuenta creada exitosamente!");
+            alert("Cuenta creada correctamente");
         }
     });
 });

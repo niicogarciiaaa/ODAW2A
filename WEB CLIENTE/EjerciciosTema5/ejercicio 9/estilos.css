@@ -1,5 +1,5 @@
 .error {
-    border: 2px solid red;
+    border: 6px solid rgb(255, 0, 0) !important;
 }
 .error-label {
     color: red;
@@ -47,4 +47,11 @@ body {
     border: none;
     cursor: pointer;
     border-radius: 4px;
+}
+img{
+    margin-top: -300px;
+    width: 100px;
+}
+p{
+    margin-top: -300px;
 }

@@ -9,30 +9,29 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Bienvenido al Banco ING</h2>
+        <h2>Accede a tu Área Clientes</h2>
         <form id="loginForm">
-            <label for="dni">DNI/Tarjeta de residencia/Pasaporte:</label>
-            <input type="text" id="dni" required>
+            <div id="input-container">
+                
+                <p>Elige tu Documento</p>
+            </div>
+            <div id="div1">
+                <label><input type="radio" name="documento" id="radioDni"> DNI o Tarjeta de Residencia</label><br/>
+                <label><input type="radio" name="documento" id="radioPasaporte"> Pasaporte</label>
+            </div>
+            <label for="dni" id="labelDNI">Número de Documento</label>
+            <input type="text" id="dni" placeholder="Introduce tu DNI/Tarjeta/Pasaporte">
 
-            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fechaNacimiento" required>
-
-            <label for="clave">Clave:</label>
-            <input type="password" id="clave" required>
+            <div class="form-group">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" required>
+            </div>
 
             <label>
                 <input type="checkbox" id="recordar"> Recordar mis datos
-            </label>
-            <button type="submit">Entrar</button>
+            </label><br/>
+            <button type="submit" id="btnValidar">Entrar</button>
         </form>
     </div>
-
-    <div id="validacionClave" class="hidden">
-        <h2>Validación de Clave de Seguridad</h2>
-        <p>Selecciona los números faltantes de tu clave</p>
-        <div id="claveParcial"></div>
-        <div id="tablaNumeros"></div>
-    </div>
-    
 </body>
 </html>
