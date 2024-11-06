@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenida Banco</title>
     <link rel="stylesheet" href="estilos.css">
-    <script defer src="ejercicio10.js"></script>
+    <script defer src="ejercicio10.js" type="module"></script>
 </head>
 <body>
     <div class="login-container">
@@ -16,20 +16,24 @@
                 <p>Elige tu Documento</p>
             </div>
             <div id="div1">
-                <label><input type="radio" name="documento" id="radioDni"> DNI o Tarjeta de Residencia</label><br/>
+                <label><input type="radio" name="documento" id="radioDni" checked> DNI o Tarjeta de Residencia</label>
                 <label><input type="radio" name="documento" id="radioPasaporte"> Pasaporte</label>
             </div>
             <label for="dni" id="labelDNI">Número de Documento</label>
-            <input type="text" id="dni" placeholder="Introduce tu DNI/Tarjeta/Pasaporte">
+            <input type="text" id="Documento" placeholder="">
 
-            <div class="form-group">
+            <div class="fechaNacimiento">
                 <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-                <input type="date" id="fechaNacimiento" required>
+                <div class="inputsContainer">
+                    <input type="text" id="DiaNac" maxlength="2" placeholder="DD">
+                    <input type="text" id="MesNac" maxlength="2" placeholder="MM">
+                    <input type="text" id="AnhoNac" maxlength="4" placeholder="AAAA">
+                </div>
             </div>
+            
 
             <label>
-                <input type="checkbox" id="recordar"> Recordar mis datos
-            </label><br/>
+                <input type="checkbox" id="recordar"> Recordar</label><br/>
             <button type="submit" id="btnValidar">Entrar</button>
         </form>
     </div>

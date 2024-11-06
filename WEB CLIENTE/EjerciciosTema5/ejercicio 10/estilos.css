@@ -17,16 +17,31 @@ body {
     border-radius: 8px;
     text-align: center;
 }
+h2{
+    font-weight: 100;
+}
 
-#div1, #input-container {
+#div1 {
+    margin: 0;              /* Elimina márgenes predeterminados */
+    padding: 0;             /* Elimina el relleno predeterminado */
+    display: flex;          /* Usamos flexbox */
+    flex-direction: column; /* Alinea los elementos de manera vertical */
+    width: 100%;            /* El div ocupa todo el ancho disponible */
     margin-bottom: 15px;
 }
-#div1{
-    margin-left: -100px;
+
+#div1 label {
+    margin-bottom: 0;       /* Elimina el margen entre los labels */
+    text-align: left;
 }
 
-#div1 label, #labelDNI {
-    font-weight: bold;
+#div1 input[type="radio"] {
+    margin-right: 10px;     /* Espacio entre el botón de radio y el texto */
+}
+
+p{
+    text-align: left;
+    margin-left: 20px;
 }
 
 input[type="text"], input[type="date"] {
@@ -77,7 +92,9 @@ input[type="text"], input[type="date"] {
     padding: 10px 15px; /* Aumenta el tamaño de los botones */
     
 }
-    
+#recordar{
+    text-align: left;
+}
 #btnValidar{
     margin-top: 20px;
     background-color: #FF6200;
@@ -92,10 +109,43 @@ input[type="text"], input[type="date"] {
     color:gray;
     border: 1px #FF6200 solid;
 }
+label{
+    text-align: left;
+}
 .correcto{
     color:green;
 
 }
 .incorrecto{
     color:red;
+}
+input[type="radio"] {
+    /* Estilos para el input radio */
+
+    accent-color: #FF6200; /* Cambiar el color de selección (si es compatible con el navegador) */
+}
+.fechaNacimiento label {
+    display: block;         /* El label estará en su propia línea */
+    margin-bottom: 10px;    /* Espacio entre el label y los inputs */
+}
+
+.fechaNacimiento {
+    display: block;         /* El contenedor de 'fechaNacimiento' se comporta como bloque */
+}
+
+.inputsContainer {
+    display: flex;          /* Los inputs estarán alineados en fila */
+    gap: 0px;              /* Espacio entre los inputs */
+    margin-left: 15px;
+}
+
+.fechaNacimiento input {
+    width: 118px;             /* El ancho de cada input es el 20% del contenedor */
+    padding: 5px;           /* Un poco de relleno dentro de los inputs */
+    text-align: center;     /* Centra el texto dentro de cada input */
+    margin: 0;              /* Elimina márgenes predeterminados */
+    height: 30px;
+}
+#Documento{
+    margin-bottom: 15px;
 }
