@@ -18,7 +18,8 @@ function seleccionarClaveAleatoria() {
     hueco.textContent = "."; // Mostrar un punto inicialmente
     huecosContainer.appendChild(hueco);
   });
-  
+  console.log(claveCorrecta)
+
   
   // Generar números desordenados
   const numerosDesordenados = shuffle(Array.from({ length: 10 }, (_, i) => i));
@@ -92,7 +93,6 @@ function seleccionarClaveAleatoria() {
       validarClave(); // Llamar a la función de validación automáticamente
     }
   }
-  console.log(claveCorrecta)
   // Función para validar la clave
   function validarClave() {
     const huecosContainer = document.getElementById("huecosContainer");

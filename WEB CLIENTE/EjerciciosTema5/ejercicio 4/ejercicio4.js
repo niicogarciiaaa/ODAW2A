@@ -18,9 +18,12 @@ mostrarNumeros(numerosSorteo);
 // Evento para cambiar los números por el orden de aparición
 document.getElementById("ordenar").addEventListener("mouseover", function () {
   mostrarNumeros(numerosAparicion);
+  document.getElementById("ordenar").innerHTML="Ver en orden de mayor a menor"
+
 });
 
 // Evento para volver a mostrar los números en el orden normal
 document.getElementById("ordenar").addEventListener("mouseout", function () {
   mostrarNumeros(numerosSorteo);
+  document.getElementById("ordenar").innerHTML="Ver en orden de Aparición"
 });

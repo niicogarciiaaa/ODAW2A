@@ -120,7 +120,7 @@ label{
     color:red;
 }
 input[type="radio"] {
-    /* Estilos para el input radio */
+   
 
     accent-color: #FF6200; /* Cambiar el color de selección (si es compatible con el navegador) */
 }
@@ -148,4 +148,11 @@ input[type="radio"] {
 }
 #Documento{
     margin-bottom: 15px;
+}
+.error {
+    border: 3px solid rgb(255, 0, 0) !important;
+    border-right: none;
+}
+.error-label {
+    color: red;
 }
