@@ -16,7 +16,7 @@ function seleccionarClaveAleatoria() {
     const hueco = document.createElement("div");
     hueco.classList.add("hueco");
     hueco.textContent = "."; // Mostrar un punto inicialmente
-    huecosContainer.appendChild(hueco);
+    tabla.appendChild(hueco);
   });
   console.log(claveCorrecta)
 
@@ -36,6 +36,10 @@ function seleccionarClaveAleatoria() {
       const btn = document.createElement("button");
       btn.textContent = numero;
       btn.style.color = "#FF6200"; // Asignar el color del texto a naranja
+      btn.style.background= "white"
+      btn.style.borderColor="#808080"
+      btn.style.borderStyle="solid"
+      btn.style.borderWidth="1px"
       btn.onclick = function () {
         agregarNumeroAlHueco(numero);
         btn.disabled = true; // Deshabilitar el botón después de que se haya hecho clic
@@ -52,6 +56,10 @@ function seleccionarClaveAleatoria() {
       const btn = document.createElement("button");
       btn.textContent = numero;
       btn.style.color = "#FF6200"; // Asignar el color del texto a naranja
+      btn.style.background= "white"
+      btn.style.borderColor="#808080"
+      btn.style.borderStyle="solid"
+      btn.style.borderWidth="1px"
       btn.onclick = function () {
         agregarNumeroAlHueco(numero);
         btn.disabled = true; // Deshabilitar el botón después de que se haya hecho clic

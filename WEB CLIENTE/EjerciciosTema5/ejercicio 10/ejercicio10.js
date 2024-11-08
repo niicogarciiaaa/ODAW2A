@@ -2,7 +2,7 @@ export class Cliente {
   constructor(dni, fechaNacimiento, clave) {
     this.dni = dni;
     // Combinar los valores en una fecha completa
-    this.fechaNacimiento = `${fechaNacimiento.anio}-${fechaNacimiento.mes}-${fechaNacimiento.dia}`;
+    this.fechaNacimiento =fechaNacimiento;
     this.clave = clave;
   }
 }
@@ -115,24 +115,16 @@ function removerError(idCampo, idEtiqueta) {
   document.getElementById(idEtiqueta).classList.remove("error-label");
 }
 
-function comprobarDatos(campoDocumento){
-  for (let i = 0; i < clientes.length; i++) {
-    if (clientes[i].dni === campoDocumento) {
-      existeDNI = true;
-      break; // Detiene el bucle si el DNI ya ha sido encontrado
-    }
-  }
-}
 
 // Función para guardar los datos en localStorage
 function guardarDatosEnLocalStorage() {
-  const dniValue = document.getElementById("Documento").value;
-  const diaValue = document.getElementById("DiaNac").value;
-  const mesValue = document.getElementById("MesNac").value;
-  const anhoValue = document.getElementById("AnhoNac").value;
+  const valorDNI = document.getElementById("Documento").value;
+  const ValorDia = document.getElementById("DiaNac").value;
+  const ValorMes = document.getElementById("MesNac").value;
+  const ValorAnho = document.getElementById("AnhoNac").value;
 
-  localStorage.setItem("dni", dniValue);
-  localStorage.setItem("diaNacimiento", diaValue);
-  localStorage.setItem("mesNacimiento", mesValue);
-  localStorage.setItem("anhoNacimiento", anhoValue);
+  localStorage.setItem("dni", valorDNI);
+  localStorage.setItem("diaNacimiento", ValorDia);
+  localStorage.setItem("mesNacimiento", ValorMes);
+  localStorage.setItem("anhoNacimiento", ValorAnho);
 }

@@ -83,12 +83,23 @@ input[type="text"], input[type="date"] {
 .botones-container .fila-botones {
     display: flex; /* Usar flex para cada fila de botones */
     justify-content: center; /* Centrar los botones en la fila */
-    margin-bottom: 10px; /* Espaciado entre filas */
+    margin-bottom: 1px; /* Espaciado entre filas */
+    
     
 }
 
 .botones-container button {
-    margin: 5px; /* Espaciado entre botones */
+    border-collapse: collapse;
+    padding: 10px 15px; /* Aumenta el tamaño de los botones */
+    font-weight: bold;
+}
+.botones-container button:last-child {
+    border-radius: 2px;
+    padding: 10px 15px; /* Aumenta el tamaño de los botones */
+    
+}
+.botones-container button:first-child {
+    border-radius: 2px 0px 0px 0px;
     padding: 10px 15px; /* Aumenta el tamaño de los botones */
     
 }
@@ -155,4 +166,8 @@ input[type="radio"] {
 }
 .error-label {
     color: red;
+}
+.bordebotones{
+    border: gray 1px ;
+    background-color: white;
 }
