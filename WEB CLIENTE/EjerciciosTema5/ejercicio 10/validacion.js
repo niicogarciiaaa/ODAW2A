@@ -112,6 +112,7 @@ function seleccionarClaveAleatoria() {
       claveIngresada += (huecos[i].textContent === ".") ? "?" : huecos[i].textContent; // Usar ? si el hueco está vacío
     }
   
+  
     // Comparar la clave ingresada con la clave correcta
     if (claveIngresada === claveCorrecta.join("")) {
       document.getElementById("correctoIncorrecto").classList.add("correcto");

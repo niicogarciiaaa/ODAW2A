@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso a Área Clientes</title>
+  <script src="ejercicio10Formulario.js" type="module" defer></script>
+  <link rel="stylesheet" type="text/css" href="ejercicio10Formulario.css">
+
+</head>
+<body>
+  <div id="contenedor">
+    <fieldset>
+      <h2>Accede a tu Área Clientes</h2>
+      <form id="formulario">
+        <div id="identificacion">
+          <label>Elige tu documento</label><br>
+          <input type="radio" id="dni" name="documentoIdentidad" checked>
+          <label for="dni">DNI o tarjeta de residencia</label><br>
+          <input type="radio" id="pasaporte" name="documentoIdentidad">
+          <label for="pasaporte">Pasaporte</label><br>
+        </div><br>
+        <label for="numeroDocumento">Número de documento:</label><br>
+        <input type="text" id="numeroDocumento" placeholder=""><br>
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label><br>
+        <input type="date" id="fechaNacimiento" required><br>
+        <input type="checkbox" id="recordarDatos">
+        <label for="recordarDatos">Recordar</label><br>
+        <button type="submit">Entrar</button>
+        <p>Más información sobre seguridad</p>
+      </form>
+    </fieldset>
+  </div>
+</body>
+</html>
