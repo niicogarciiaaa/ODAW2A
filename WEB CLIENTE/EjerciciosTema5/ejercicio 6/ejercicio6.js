@@ -68,7 +68,7 @@ const imagenes = ['azul.png', 'verde.png', 'rojo.png', 'morado.png', 'amarillo.p
     }
 
     // Resetear las cartas seleccionadas
-    function resetearCartas(sonIguales) {
+    function resetearCartas() {
         primeraCarta = null;
         segundaCarta = null;
         bloquearTablero = false;

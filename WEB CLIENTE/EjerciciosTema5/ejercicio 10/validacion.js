@@ -34,12 +34,8 @@ function seleccionarClaveAleatoria() {
     for (let j = 0; j < 5; j++) {
       const numero = numerosDesordenados[j]; // Obtener el número correspondiente
       const btn = document.createElement("button");
+      btn.classList.add("boton-clave")
       btn.textContent = numero;
-      btn.style.color = "#FF6200"; // Asignar el color del texto a naranja
-      btn.style.background= "white"
-      btn.style.borderColor="#808080"
-      btn.style.borderStyle="solid"
-      btn.style.borderWidth="1px"
       btn.onclick = function () {
         agregarNumeroAlHueco(numero);
         btn.disabled = true; // Deshabilitar el botón después de que se haya hecho clic
@@ -54,12 +50,8 @@ function seleccionarClaveAleatoria() {
     for (let j = 5; j < 10; j++) {
       const numero = numerosDesordenados[j]; // Obtener el número correspondiente
       const btn = document.createElement("button");
+      btn.classList.add("boton-clave")
       btn.textContent = numero;
-      btn.style.color = "#FF6200"; // Asignar el color del texto a naranja
-      btn.style.background= "white"
-      btn.style.borderColor="#808080"
-      btn.style.borderStyle="solid"
-      btn.style.borderWidth="1px"
       btn.onclick = function () {
         agregarNumeroAlHueco(numero);
         btn.disabled = true; // Deshabilitar el botón después de que se haya hecho clic
@@ -111,6 +103,7 @@ function seleccionarClaveAleatoria() {
     for (let i = 0; i < huecos.length; i++) {
       claveIngresada += (huecos[i].textContent === ".") ? "?" : huecos[i].textContent; // Usar ? si el hueco está vacío
     }
+  
   
     // Comparar la clave ingresada con la clave correcta
     if (claveIngresada === claveCorrecta.join("")) {

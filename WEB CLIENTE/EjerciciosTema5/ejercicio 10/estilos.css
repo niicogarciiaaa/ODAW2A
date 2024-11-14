@@ -87,6 +87,13 @@ input[type="text"], input[type="date"] {
     
     
 }
+.boton-clave{
+    color: #FF6200;
+    background-color: white;
+    border:1px solid #808080;
+
+
+}
 
 .botones-container button {
     border-collapse: collapse;

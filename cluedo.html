@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego estilo Cluedo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    button {
+      margin: 5px;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+    .tablero {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 5px;
+      margin-top: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .habitacion {
+      border: 2px solid #ccc;
+      padding: 40px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+    }
+    .habitacion:hover {
+      background-color: #f0f0f0;
+    }
+    .jugador {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+    }
+    .jugador2 {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 20px;
+      height: 20px;
+      background-color: blue;
+      border-radius: 50%;
+    }
+    .turno {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Juego estilo Cluedo</h1>
+  <p>Haz preguntas y mueve a los jugadores en el tablero.</p>
+  
+  <div id="turno" class="turno">
+    <p>Turno de: <span id="jugador"></span></p>
+  </div>
+  
+  <div class="tablero">
+    <!-- Las habitaciones del tablero -->
+    <div class="habitacion" id="habitacion1" onclick="moverJugador(1)">
+      <span>Sala</span>
+      <div class="jugador" id="jugador1"></div>
+    </div>
+    <div class="habitacion" id="habitacion2" onclick="moverJugador(2)">
+      <span>Cocina</span>
+      <div class="jugador2" id="jugador2"></div>
+    </div>
+    <div class="habitacion" id="habitacion3" onclick="moverJugador(3)">
+      <span>Comedor</span>
+    </div>
+    <div class="habitacion" id="habitacion4" onclick="moverJugador(4)">
+      <span>Biblioteca</span>
+    </div>
+    <div class="habitacion" id="habitacion5" onclick="moverJugador(5)">
+      <span>Estudio</span>
+    </div>
+    <div class="habitacion" id="habitacion6" onclick="moverJugador(6)">
+      <span>Balcón</span>
+    </div>
+  </div>
+
+  <div id="resultado"></div>
+</div>
+
+<script>
+  // Jugadores y turno
+  let jugadores = ['Jugador 1', 'Jugador 2'];
+  let turnoActual = 0; // 0 -> Jugador 1, 1 -> Jugador 2
+  let posiciones = [1, 2]; // Jugador 1 está en la habitación 1, Jugador 2 está en la habitación 2
+
+  // Función para actualizar el turno
+  function actualizarTurno() {
+    document.getElementById('jugador').textContent = jugadores[turnoActual];
+  }
+
+  // Función para mover un jugador
+  function moverJugador(habitacionDestino) {
+    // Verificar si es el turno del jugador que está tratando de moverse
+    if ((turnoActual === 0 && habitacionDestino !== posiciones[0]) && (turnoActual === 1 && habitacionDestino !== posiciones[1])) {
+      alert('Es tu turno, selecciona una habitación para moverte.');
+      return;
+    }
+
+    // Actualizar la posición del jugador
+    if (turnoActual === 0) {
+      document.getElementById(`jugador${turnoActual + 1}`).style.top = '5px';
+      document.getElementById(`jugador${turnoActual + 1}`).style.left = '5px';
+      posiciones[0] = habitacionDestino;
+    } else {
+      document.getElementById(`jugador${turnoActual + 1}`).style.top = '5px';
+      document.getElementById(`jugador${turnoActual + 1}`).style.left = '5px';
+      posiciones[1] = habitacionDestino;
+    }
+
+    // Cambiar al siguiente jugador después de cada movimiento
+    turnoActual = (turnoActual + 1) % jugadores.length;
+    actualizarTurno();
+  }
+
+  // Inicializar el juego
+  actualizarTurno();
+</script>
+
+</body>
+</html>

@@ -8,58 +8,71 @@ document.addEventListener("DOMContentLoaded", function () {
     if (localStorage.getItem("nombre")) {
         nombreUsuarioField.value = localStorage.getItem("nombre");
     }
+    let spanNombre= document.getElementById("spanNombre");
+    let spanCorreo= document.getElementById("spanCorreo");
+    let spanContrasenha= document.getElementById("spanContrasenha");
 
     function validaNombre() {
         if (nombreUsuarioField.value.trim() === "") {
-            aplicarError("nombreUsuario", "nombreUsuarioL");
+            aplicarError("nombreUsuario");
+            spanNombre.innerHTML="❗Introduce un Nombre";
             return false;
         } else {
-            removerError("nombreUsuario", "nombreUsuarioL");
+            removerError("nombreUsuario");
+            spanNombre.innerHTML="";
+
             return true;
+            
         }
     }
 
     function validaCorreo() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(correoField.value.trim())) {
-            aplicarError("correo", "labelcorreo");
+            aplicarError("correo");
+            spanCorreo.innerHTML="❗Introduce tu dirección de correo electrónico o teléfono móvil ";
             return false;
         } else {
-            removerError("correo", "labelcorreo");
+            removerError("correo");
+            spanCorreo.innerHTML="";
             return true;
         }
     }
 
     function validaContrasena() {
         if (contrasena1Field.value.length < 6) {
-            aplicarError("contrasnha1", "labelContrasena1");
+            aplicarError("contrasnha1");
+            spanContrasenha.innerHTML="❗Introduce una contraseña";
             return false;
         } else {
-            removerError("contrasnha1", "labelContrasena1");
+            removerError("contrasnha1");
+            spanContrasenha.innerHTML="";
+
             return true;
         }
     }
 
     function validaConfirmacionContrasena() {
         if (contrasena1Field.value !== contrasena2Field.value) {
-            aplicarError("contrasnha2", "labelContrasena2");
-            aplicarError("contrasnha1", "labelContrasena1");
+            aplicarError("contrasnha2");
+            aplicarError("contrasnha1");
             return false;
         } else {
-            removerError("contrasnha2", "labelContrasena2");
+            removerError("contrasnha2");
             return true;
         }
     }
 
-    function aplicarError(idCampo, idEtiqueta) {
+    function aplicarError(idCampo) {
         document.getElementById(idCampo).classList.add('error');
-        document.getElementById(idEtiqueta).classList.add('error-label');
+       
+        
     }
     
 
-    function removerError(idCampo, idEtiqueta) {
+    function removerError(idCampo) {
         document.getElementById(idCampo).classList.remove('error');
-        document.getElementById(idEtiqueta).classList.remove('error-label');
+       
     }
 
     document.getElementById("registrationForm").addEventListener("submit", function (event) {
