@@ -1,0 +1,28 @@
+.error {
+    border: 2px solid red;
+}
+
+.error-label {
+    color: red;
+}
+.nuevo-disco {
+    background-color: #dff0d8; /* Verde claro */
+    font-weight: bold;
+}
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input,
+form select,
+form button {
+    display: block;
+    margin-bottom: 10px;
+}
+form{
+    margin-left: 40%;
+}
+table{
+    margin-left: 35%;
+}

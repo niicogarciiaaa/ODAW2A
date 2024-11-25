@@ -1,0 +1,35 @@
+.rojo{
+    background-color: red;
+}
+.azul{
+    background-color: blue;
+}
+.verde{
+    background-color: limegreen;
+}
+.amarillo{
+    background-color: yellow;
+    color:black;
+}
+.violeta{
+    background-color: violet;
+}
+#rojo{
+    background-color: red;
+}
+#azul{
+    background-color: blue;
+}
+#verde{
+    background-color: limegreen;
+}
+#amarillo{
+    background-color: yellow;
+    color:black;
+}
+#violeta{
+    background-color: violet;
+}
+option{
+    color:white;
+}
