@@ -4,9 +4,12 @@
     var parrafo = document.createElement("p");
 
     // Obtener el texto del textarea
+    if(document.getElementById("texto").value != ""){
     var texto = document.createTextNode(document.getElementById("texto").value);
     parrafo.appendChild(texto);
-
+    }else{
+        alert("no se puede crear un párrafo vacío")
+    }
     // Obtener el valor del select para el color
     const select = document.getElementById("colores");
     const valorSeleccionado = select.value; // Obtiene el valor de la opción seleccionada
