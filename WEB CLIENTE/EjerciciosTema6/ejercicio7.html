@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Edificios y Galería</title>
+    <link rel="stylesheet" href="ejercicio7.css">
+    <script src="ejercicio7.js" defer></script>
+</head>
+<body>
+    <h1>Gestión de Edificios y Galería</h1>
+
+    <!-- Formulario para crear un edificio -->
+    <form id="form-crear-edificio">
+        <h2>Crear Edificio</h2>
+        <div>
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" required>
+        </div>
+        <div>
+            <label for="plantas">Número de plantas:</label>
+            <input type="number" id="plantas" min="1" required>
+        </div>
+        <div>
+            <label for="puertas">Número de puertas por planta:</label>
+            <input type="number" id="puertas" min="1" required>
+        </div>
+        <button type="submit">Añadir Edificio</button>
+    </form>
+
+    <!-- Formulario para listar edificios -->
+    <form id="form-lista-edificios">
+        <h2>Lista de Edificios</h2>
+        <div id="lista-edificios"></div>
+        <div>
+            <label for="planta">Planta:</label>
+            <input type="number" id="planta" min="0">
+            <label for="puerta">Puerta:</label>
+            <input type="number" id="puerta" min="1">
+            <label for="propietario">Propietario:</label>
+            <input type="text" id="propietario">
+            <button type="button" id="modificar-propietario">Modificar Propietario</button>
+        </div>
+    </form>
+
+    <!-- Formulario para mostrar un edificio -->
+    <form id="form-mostrar-edificio">
+        <h2>Mostrar Edificio</h2>
+        <div>
+            <label for="select-edificio">Seleccionar edificio:</label>
+            <select id="select-edificio"></select>
+        </div>
+        <button type="button" id="mostrar-edificio">Mostrar Edificio</button>
+    </form>
+
+    <div id="tabla-edificio" class="hidden"></div>
+
+</body>
+</html>
