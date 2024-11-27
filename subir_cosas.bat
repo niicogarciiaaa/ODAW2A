@@ -14,7 +14,7 @@ for /f %%i in ('wmic os get localdatetime ^| find "."') do set datetime=%%i
 set fecha=%datetime:~0,4%-%datetime:~4,2%-%datetime:~6,2%
 
 REM Crear el mensaje de commit con la fecha actual
-set commit_message=Commit automático: %fecha%
+set commit_message=Commit del dia: %fecha%
 
 REM Hacer commit con el mensaje automático
 git commit -m "%commit_message%"
