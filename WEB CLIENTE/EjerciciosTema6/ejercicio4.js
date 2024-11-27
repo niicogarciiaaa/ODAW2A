@@ -1,14 +1,15 @@
 function crearInput(){
     let input = document.createElement("input")
+    input.id =
     input.name= prompt("Introduce el atributo nombre");
-    confirm("El nombre del input es"+input.name)
+    confirm("El nombre del input es: "+input.name)
     document.body.appendChild(input);
 }
 function crearPass(){
     let input = document.createElement("input");
     input.type = "password";
     input.name= prompt("Introduce el atributo nombre");
-    confirm("El nombre del input es"+input.name)
+    confirm("El nombre del input es: "+input.name)
     document.body.appendChild(input)
 }
 function crearTextarea(){
@@ -16,13 +17,15 @@ function crearTextarea(){
     textarea.name= prompt("Introduce el atributo nombre");
     textarea.setAttribute('cols', '40');
     textarea.setAttribute('rows', '5'); 
-    confirm("El nombre del input es"+textarea.name);
+    confirm("El nombre del input es: "+textarea.name);
     document.body.appendChild(textarea);
 }
 function crearLabel(){
-    let label = document.createElement("input");
-    label.setAttribute('for', prompt("Introduce el atributo nombre"));
-    confirm("El nombre del input es"+input.name);
+    let atributo = prompt("Introduce el atributo nombre");
+    let label = document.createElement("label");
+    label.textContent= prompt("Introduce el texto del label")
+    label.setAttribute('for',atributo );
+    confirm("El nombre del input es: "+atributo);
     document.body.appendChild(label);
 }
 function crearImagen() {

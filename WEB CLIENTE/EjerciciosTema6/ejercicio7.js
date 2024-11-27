@@ -14,8 +14,8 @@ const galeria = document.getElementById('galeria');
 formCrearEdificio.addEventListener('submit', (e) => {
     e.preventDefault();
     const direccion = document.getElementById('direccion').value;
-    const plantas = parseInt(document.getElementById('plantas').value);
-    const puertas = parseInt(document.getElementById('puertas').value);
+    const plantas = parseInt((document.getElementById('plantas').value));
+    const puertas = parseInt((document.getElementById('puertas').value));
 
     const edificio = {
         direccion,
@@ -58,15 +58,15 @@ function actualizarListaEdificios() {
 
 // Modificar propietario
 document.getElementById('modificar-propietario').addEventListener('click', () => {
-    const planta = parseInt(document.getElementById('planta').value);
-    const puerta = parseInt(document.getElementById('puerta').value);
+    const planta = parseInt((document.getElementById('planta').value)-1);
+    const puerta = parseInt((document.getElementById('puerta').value)-1);
     const propietario = document.getElementById('propietario').value;
 
     const seleccionado = document.querySelector('input[name="edificio"]:checked');
     if (seleccionado && planta >= 0 && puerta > 0 && propietario) {
         const edificio = edificios[seleccionado.value];
         if (planta < edificio.plantas && puerta <= edificio.puertas) {
-            edificio.propietarios[planta][puerta - 1] = propietario;
+            edificio.propietarios[planta][puerta] = propietario;
             alert('Propietario modificado correctamente');
         } else {
             alert('Planta o puerta fuera de rango');
@@ -85,7 +85,7 @@ document.getElementById('mostrar-edificio').addEventListener('click', () => {
     tablaEdificio.innerHTML = '<h3>Edificio en ' + edificio.direccion + '</h3>';
     const table = document.createElement('table');
     const header = document.createElement('tr');
-    header.innerHTML = '<th>Planta</th>' + Array.from({ length: edificio.puertas }, (_, i) => `<th>Puerta ${i + 1}</th>`).join('');
+    header.innerHTML = '<th>Planta</th>' + Array.from({ length: edificio.puertas }, (_, i) => `<th>Puerta ${i+1}</th>`).join('');
     table.appendChild(header);
 
     edificio.propietarios.forEach((planta, i) => {
