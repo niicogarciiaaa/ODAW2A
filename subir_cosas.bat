@@ -4,7 +4,7 @@ echo   Subiendo cambios a Git...
 echo ================================
 
 REM Navegar a la carpeta del repositorio (ajusta la ruta según sea necesario)
-cd /d "C:/Users/nicolas.garciamoreir/Desktop/ODAW2A"
+cd /d "C:/Users/%USERNAME%/Desktop/ODAW2A"
 
 REM Agregar todos los cambios al área de preparación
 git add .
