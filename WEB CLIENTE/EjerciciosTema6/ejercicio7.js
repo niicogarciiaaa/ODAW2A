@@ -6,9 +6,7 @@ const listaEdificios = document.getElementById('lista-edificios');
 const selectEdificio = document.getElementById('select-edificio');
 const tablaEdificio = document.getElementById('tabla-edificio');
 
-const formCargarImagen = document.getElementById('form-cargar-imagen');
-const inputImagen = document.getElementById('input-imagen');
-const galeria = document.getElementById('galeria');
+
 
 // Agregar edificio
 formCrearEdificio.addEventListener('submit', (e) => {
