@@ -25,4 +25,14 @@ git push origin main
 echo ================================
 echo   Cambios subidos correctamente
 echo ================================
+echo ¿Estás seguro de que quieres apagar el ordenador? (S/N)
+set /p respuesta=
+
+if /i "%respuesta%"=="S" (
+    echo Apagando el ordenador...
+    shutdown /s /t 0
+) else (
+    echo Cancelado.
+  
+)
 pause
