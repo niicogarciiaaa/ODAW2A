@@ -1,0 +1,15 @@
+@media all{
+     p{
+        font-weight: bold;
+        font-size: 20px;
+        text-align: left;
+    }
+}
+
+@media screen {
+    img {
+        display: block;        /* Convierte la imagen en un elemento de bloque */
+        margin-left: auto;     /* Centra horizontalmente */
+        margin-right: auto;    /* Centra horizontalmente */
+    }
+}
