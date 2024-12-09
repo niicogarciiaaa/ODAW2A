@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Alumno</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 15px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .errorInput{
+            border:6px solid red;
+        }
+    </style>
+    <script src="ejercicio2.js"></script>
+</head>
+<body>
+    <h2>Formulario de Registro de Alumno</h2>
+    <form action="#" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"  placeholder="Introduce el nombre">
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos"  placeholder="Introduce los apellidos">
+
+        <label for="asignatura">Asignatura:</label>
+        <select id="asignatura" name="asignatura" >
+            <option value="">Selecciona una asignatura</option>
+            <option value="mate">Matemáticas</option>
+            <option value="lengua">Lengua</option>
+            <option value="lingua">Lingua</option>
+            <option value="ingles">Inglés</option>
+            <option value="musica">Música</option>
+            <option value="tic">TIC</option>
+        </select>
+
+        <label for="correo">Correo Electrónico:</label>
+        <input type="text" id="correo" name="correo"  placeholder="Introduce el correo electrónico">
+        
+        <label for="nota">Nota:</label>
+        <input type="number" id="nota" name="nota"  placeholder="Introduce la nota (0-10)" min="0" max="10" step="0.1">
+
+       
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("DOMContentLoaded", function () {
     const nombreUsuarioField = document.getElementById("nombreUsuario");
     const correoField = document.getElementById("correo");
     const contrasena1Field = document.getElementById("contrasnha1");
