@@ -17,7 +17,7 @@ body {
     display: inline-block;
 }
 .contenedor-imagen img {
-    max-width: 200px;
+    max-width: 500px;
     border-radius: 10px;
 }
 .boton-eliminar {

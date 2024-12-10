@@ -1,7 +1,5 @@
-let parrafos = document.querySelectorAll("p");
 let iframe = document.getElementById("iframe");
 let formulario = document.getElementById("formulario");
-
 
 // Función que maneja el evento de formulario
 formulario.addEventListener("submit", function(event) {
@@ -18,7 +16,30 @@ formulario.addEventListener("submit", function(event) {
 
 // Función para obtener el contenido del documento (ya sea principal o del iframe)
 function obtenerContenido() {
-  return iframe.src ? iframe.contentDocument : document;
+  return iframe.contentDocument || document;
+}
+
+// Ejecutar funciones cuando el contenido del iframe esté completamente cargado
+iframe.addEventListener("load", function() {
+  if (iframe.contentDocument && iframe.contentDocument.body) {
+    ejecutarFunciones(); // Solo ejecutar si el iframe tiene contenido
+  }
+});
+
+// Ejecutar funciones en el documento principal si no hay contenido en el iframe
+if (!iframe.src) {
+  ejecutarFunciones(); // Ejecutar en el documento principal si no hay contenido en el iframe
+}
+
+function ejecutarFunciones() {
+  contarParrafos();
+  textoSegundoParrafo();
+  contarEnlaces();
+  primerEnlace();
+  penultimoEnlace();
+  enlacesMunicipio();
+  enlacesPrimerParrafo();
+  contarElementos();
 }
 
 // Funciones para interactuar con el contenido del iframe o del documento principal
@@ -74,8 +95,11 @@ function enlacesMunicipio() {
 
 function enlacesPrimerParrafo() {
   const contenido = obtenerContenido();
-  const enlacesPrimerParrafo = contenido.querySelector("p").querySelectorAll("a").length;
-  document.getElementById("resultado").innerHTML += "El número de enlaces en el primer párrafo es: " + enlacesPrimerParrafo + "<br>";
+  const primerParrafo = contenido.querySelector("p");
+  if (primerParrafo) {
+    const enlacesPrimerParrafo = primerParrafo.querySelectorAll("a").length;
+    document.getElementById("resultado").innerHTML += "El número de enlaces en el primer párrafo es: " + enlacesPrimerParrafo + "<br>";
+  }
 }
 
 function contarElementos() {
@@ -85,6 +109,7 @@ function contarElementos() {
     console.log(parrafo.textContent);
   });
 }
+
 
 // Ejecutar funciones cuando el contenido del iframe esté completamente cargado
 iframe.addEventListener("load", function() {

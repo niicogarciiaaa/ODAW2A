@@ -25,7 +25,7 @@ git push origin main
 echo ================================
 echo   Cambios subidos correctamente
 echo ================================
-echo ¿Estás seguro de que quieres apagar el ordenador? (S/N)
+echo ¿Estas seguro de que quieres apagar el ordenador? (S/N)
 set /p respuesta=
 
 if /i "%respuesta%"=="S" (

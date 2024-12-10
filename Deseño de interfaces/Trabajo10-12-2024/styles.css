@@ -1,0 +1,32 @@
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor {
+  width: 80%;
+  height: 100px;
+  position: relative;
+  
+}
+
+.imagen {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  animation: mover 5s infinite alternate ease-in-out; /* lo que hace que se ejecute la animacion mover, que dure 5s la animacion,
+   que sea de forma infinita, de forma alternativa en cuanto a movimiento,es decir de derecha a izquierda y viceversa,ease-in-out,
+    es una funcion de temporización que controla el movimiento de la animacion  */
+}
+
+@keyframes mover {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 100px); /* Ajusta la distancia del movimiento */
+  }
+}
