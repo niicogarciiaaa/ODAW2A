@@ -21,7 +21,8 @@ document.write("Nombre: "+ArrayNombreyApellidos[0]+"<br/>");
 document.write("Apellido1: "+ArrayNombreyApellidos[1]+"<br/>");
 document.write("Apellido2: "+ArrayNombreyApellidos[2]+"<br/>");
 
-let usuario1 = ArrayNombreyApellidos[0][0].toLowerCase() + ArrayNombreyApellidos[1].toLowerCase() + ArrayNombreyApellidos[2][0].toLowerCase();
+let usuario1 = ArrayNombreyApellidos[0][0].toLowerCase() + ArrayNombreyApellidos[1].toLowerCase() + ArrayNombreyApellidos[2][0].toLowerCase();// el [0][0] es para poder coger el carácter del primer string del array
+                                                                                                                                              //el [2][0], para recoger el caracter del 2 string
 document.write("Propuesta de nombre de usuario 1: " + usuario1 + "<br>");
 
 

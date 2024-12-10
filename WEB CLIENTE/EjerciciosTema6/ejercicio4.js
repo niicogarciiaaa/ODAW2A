@@ -63,13 +63,13 @@ function crearBoton() {
     document.body.appendChild(boton);
 }
 
-let btninput = document.getElementById("CrearInput").addEventListener("click",crearInput);
-let btnpass = document.getElementById("CrearPass").addEventListener("click",crearPass);
-let btntext = document.getElementById("CrearTextarea").addEventListener("click",crearTextarea);
-let btnlabel = document.getElementById("CrearLabel").addEventListener("click",crearLabel);
-let btnimg = document.getElementById("CrearImg").addEventListener("click",crearImagen);
-let btncheck = document.getElementById("CrearCheckbox").addEventListener("click",crearCheckbox);
-let btnradio = document.getElementById("CrearRadio").addEventListener("click",crearRadio);
-let btnbutt = document.getElementById("CrearButton").addEventListener("click",crearBoton)
+document.getElementById("CrearInput").addEventListener("click",crearInput);
+document.getElementById("CrearPass").addEventListener("click",crearPass);
+document.getElementById("CrearTextarea").addEventListener("click",crearTextarea);
+document.getElementById("CrearLabel").addEventListener("click",crearLabel);
+document.getElementById("CrearImg").addEventListener("click",crearImagen);
+document.getElementById("CrearCheckbox").addEventListener("click",crearCheckbox);
+document.getElementById("CrearRadio").addEventListener("click",crearRadio);
+document.getElementById("CrearButton").addEventListener("click",crearBoton)
 
 

@@ -1,15 +1,23 @@
-@media all{
-     p{
-        font-weight: bold;
-        font-size: 20px;
-        text-align: left;
-    }
+img {
+    width: 100px;
+    height: 100px;
 }
-
-@media screen {
-    img {
-        display: block;        /* Convierte la imagen en un elemento de bloque */
-        margin-left: auto;     /* Centra horizontalmente */
-        margin-right: auto;    /* Centra horizontalmente */
-    }
+div h2 {
+    color: green;
+    font-weight: bold;
+}
+td:nth-child(odd) {
+    background-color: #2b2d42;
+    color: white;
+    font-size: 20px;
+}
+p::first-letter {
+    
+    color: red;
+}
+input[type="text"] {
+    width: 150px;
+    display: block;
+    margin-bottom: 10px;
+    background-color: yellow;
 }
