@@ -14,19 +14,19 @@ body {
 }
 
 .imagen {
-  width: 100px;
-  height: auto;
-  position: absolute;
+  width: 100px; /*anchura 100 px */
+  height: auto; /*altura auto*/
+  position: absolute; /*posicion absoluta*/
   animation: mover 5s infinite alternate ease-in-out; /* lo que hace que se ejecute la animacion mover, que dure 5s la animacion,
    que sea de forma infinita, de forma alternativa en cuanto a movimiento,es decir de derecha a izquierda y viceversa,ease-in-out,
     es una funcion de temporización que controla el movimiento de la animacion  */
 }
 
 @keyframes mover {
-  0% {
-    left: 0;
+  0% {      /*estado inicial de la animación */
+    left: 0; /*ubicacion lo mas a la izquierda posible */
   }
-  100% {
-    left: calc(100% - 100px); /* Ajusta la distancia del movimiento */
+  100% {   /*estado final de la navegacion*/
+    left: calc(100% - 100px); /* Ajusta la distancia del movimiento, en este caso iría hasta el final del contenedor sin que sobresalga nada,gracias al calculo de 100%-100px, donde 100px es el tamaño de la imagen */
   }
 }

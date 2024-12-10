@@ -40,3 +40,6 @@
 .seleccionado{
 	border: medium solid rgb(14, 50, 0);
 }
+table{
+	margin: auto;
+}
