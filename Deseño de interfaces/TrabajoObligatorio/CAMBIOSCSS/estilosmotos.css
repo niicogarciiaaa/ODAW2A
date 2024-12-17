@@ -1,0 +1,167 @@
+/* Estilo general de la página */
+h1, h3 {
+    text-align: center; /* Centra el texto de los encabezados h1 y h3 */
+    color: red; /* Establece el color del texto de los encabezados h1 y h3 a rojo */
+}
+
+body {
+    background-color: #F9F5EB; /* Establece el color de fondo del cuerpo de la página a un tono beige claro */
+}
+
+#general {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+/* El diseño flexbox en CSS ofrece un control preciso sobre la disposición de elementos.
+  En este caso, distribuye el espacio uniformemente alrededor de los elementos,
+  permitiendo que se envuelvan a la siguiente línea si es necesario.
+  Esto crea un diseño fluido y adaptable. El espacio de 20 píxeles entre los elementos añade una separación visual clara,
+   mejorando la legibilidad y el aspecto general del diseño. */
+
+a, li {
+    text-decoration: none; 
+    color: black; 
+    display: inline; 
+    
+    background-color: #E4DCCF; 
+    
+    font-family: Arial; 
+}
+/*En este caso, se elimina el subrayado predeterminado de los enlaces, creando un aspecto más limpio y moderno.
+ El color del texto se establece en negro, garantizando una óptima legibilidad.
+ La visualización en línea permite que estos elementos se alineen horizontalmente, ideal para menús de navegación compactos.
+ Un fondo beige suave se aplica, diferenciando sutilmente estos elementos del contenido circundante.
+ Finalmente, la fuente Arial proporciona un aspecto consistente y fácil de leer.*/
+
+nav a {
+    display: inline-block; 
+    text-decoration: none; 
+    color: black; 
+    background-color: #E4DCCF; 
+    font-family: Arial; 
+    border-radius: 5px; 
+    margin: 0 10px; 
+    width: 100px; 
+    padding: 0px; 
+}
+/* Las propiedades CSS aplicadas a los enlaces de navegación hacen que se configuren como bloques en línea,
+   permitiendo un diseño flexible y alineado.
+   Se elimina el subrayado predeterminado y se establece el texto en color negro, mejorando la legibilidad.
+   Un fondo beige suave y esquinas redondeadas añaden un toque estético distintivo.
+   La fuente Arial asegura una apariencia consistente y moderna.
+   Se aplica un margen horizontal y un ancho fijo, creando una disposición uniforme y ordenada. 
+   La eliminación del relleno interno ajusta finamente el espacio dentro de cada enlace.
+   En conjunto, estas propiedades crean una barra de navegación visualmente atractiva y funcionalmente eficiente. */
+
+nav a li:hover {
+    color: white; /* Cambia el color del texto a blanco cuando se pasa el cursor sobre los elementos de lista dentro de los enlaces de navegación */
+}
+
+/* Estilo de las tarjetas de motos */
+.car {
+    text-align: center; 
+    margin: 15px;
+    width: 200px; 
+    border: 2px solid #333; 
+    padding: 15px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    background-color: #F9F5EB; 
+    opacity: 0; 
+    transform: translateY(50px);
+    animation: fadeIn 1s ease-out forwards, rebote 0.5s ease-in-out forwards, bordeResaltado 2s linear forwards; 
+}
+/* Este código CSS estiliza las tarjetas centrando su contenido, añadiendo un margen de 15px y un ancho fijo de 200px.
+   Se aplica un borde gris oscuro de 2px, esquinas redondeadas y una sombra suave para darle profundidad.
+   Inicialmente invisibles y desplazadas 50px hacia abajo, las tarjetas se animan con un efecto de aparición,
+   rebote y borde resaltado.*/
+
+/* Retrasos en la animación para cada tarjeta */
+.car:nth-child(1) {
+    animation-delay: 0s; /* Sin retraso para la primera tarjeta */
+}
+.car:nth-child(2) {
+    animation-delay: 0.2s; /* Retraso de 0.2 segundos para la segunda tarjeta */
+}
+.car:nth-child(3) {
+    animation-delay: 0.4s; /* Retraso de 0.4 segundos para la tercera tarjeta */
+}
+.car:nth-child(4) {
+    animation-delay: 0.6s; /* Retraso de 0.6 segundos para la cuarta tarjeta */
+}
+
+/* Estilo para las imágenes */
+.car img#imgmotos {
+    margin-top: 15px;
+    width: 200px;  
+    height: 130px; 
+    margin-bottom: 10px; 
+    border-radius: 10px; 
+}
+/* Este código CSS aplica un margen superior de 15px a las imágenes,
+ un ancho fijo de 200px y una altura fija de 130px para mantener la uniformidad.
+ También se añade un margen inferior de 10px para separarlas de otros elementos
+ y se redondean las esquinas para suavizar su apariencia.*/
+
+/* Estilo para los textos dentro de las tarjetas */
+.car p {
+    margin: 10px 0; /* Añade un margen vertical de 10px a los párrafos dentro de las tarjetas */
+    color: red; /* Establece el color del texto de los párrafos a rojo */
+}
+
+.car span {
+    font-weight: bold; /* Hace que el texto dentro de los elementos span sea negrita */
+    color: #000000; /* Establece el color del texto de los elementos span a negro */
+}
+
+/* Keyframes para la animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comienza con opacidad 0 */
+        transform: translateY(50px); /* Comienza desplazado 50px hacia abajo */
+    }
+    to {
+        opacity: 1; /* Termina con opacidad completa */
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+
+/* Keyframes para la animación de rebote */
+@keyframes rebote {
+    0%, 100% {
+        transform: translateY(0); /* Comienza y termina en su posición original */
+    }
+    50% {
+        transform: translateY(-15px); /* En el punto medio, se eleva 15px */
+    }
+}
+
+/* Animación para el borde que cambia de color */
+@keyframes bordeResaltado {
+    0% {
+        border-color: red; /* Comienza con borde rojo */
+    }
+    25% {
+        border-color: green; /* Cambia a verde en el 25% de la animación */
+    }
+    50% {
+        border-color: blue; /* Cambia a azul en el 50% de la animación */
+    }
+    75% {
+        border-color: orange; /* Cambia a naranja en el 75% de la animación */
+    }
+    80% {
+        border-color: purple; /* Cambia a púrpura en el 80% de la animación */
+    }
+    100% {
+        border-color: black; /* Termina con borde negro */
+    }
+}
+
+/* Efecto hover */
+.car:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la tarjeta al 105% cuando se pasa el cursor */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Añade una sombra más pronunciada al pasar el cursor */
+}

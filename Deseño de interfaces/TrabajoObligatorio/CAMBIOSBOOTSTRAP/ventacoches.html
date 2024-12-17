@@ -5,196 +5,195 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMPRAVENTA N&G</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom Styles -->
-    <style>
-        body {
-            background-color: #F9F5EB; /* beige2 */
-            color: #E21818; /* rojo2 */
-        }
-        header {
-            background-color: #E21818; /* rojo2 */
-            color: #F9F5EB; /* beige2 */
-        }
-        nav {
-            background-color: #EA5455; /* beige1 */
-        }
-        nav a.nav-link {
-            color: #F9F5EB; /* beige2 */
-        }
-        nav a.nav-link:hover {
-            color: #E4DCCF; /* beige1 */
-        }
-        .car {
-            border: 2px solid #E4DCCF; /* beige1 */
-            border-radius: 10px;
-            padding: 20px;
-            background-color: #fff;
-            margin: 15px 0;
-            display: flex;
-            flex-direction: row; /* Disposición horizontal */
-            align-items: center; /* Centrar verticalmente */
-            justify-content: space-between;
-        }
-        .car img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover; /* Mantiene la proporción sin distorsionar la imagen */
-            border-radius: 10px;
-        }
-        .car .details {
-            flex-grow: 1;
-            margin-left: 20px;
-        }
-        .car p {
-            font-size: 1.2rem;
-        }
-        .car span {
-            font-weight: bold;
-        }
-        .alert-custom {
-            background-color: #EA5455; /* beige1 */
-            color: #F9F5EB; /* beige2 */
-            border-radius: 5px;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+   <!-- <link rel="stylesheet" href="estiloscoches.css"> -->
 </head>
-<body>
+    <style>
+        /* Colores personalizados */
+.bg-rojo2 {
+    background-color: #EA5455;
+}
 
-    <!-- Header -->
-    <header class="text-center py-4">
-        <h1>COMPRAVENTA N&G</h1>
-    </header>
+.text-rojo1 {
+    color: #E21818;
+}
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="paginaprincipal.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ventamotos.html">Venta de motos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="formulario.html">Formulario Venta</a>
-                    </li>
-                </ul>
-            </div>
+.text-rojo2 {
+    color: #EA5455;
+}
+
+body {
+    padding: 20px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Asegurarse de que el desplegable tenga el mismo tamaño que la tarjeta */
+.card-body .dropdown-menu {
+    width: 100%; /* Hace que el desplegable ocupe todo el ancho de su contenedor */
+    max-width: none; /* Evita que haya un límite de tamaño máximo */
+}
+
+.card-body .dropdown-toggle {
+    width: 100%; /* Hace que el botón que abre el desplegable ocupe todo el ancho de su contenedor */
+}
+ 
+/* Establecer un tamaño uniforme para las imágenes */
+/* Establecer un tamaño uniforme para las imágenes */
+.card-img-top {
+    width: 100%; /* Asegura que la imagen ocupe el ancho del contenedor */
+    height: 200px; /* Establece una altura fija para las imágenes */
+    object-fit: cover; /* Mantiene la proporción de la imagen, recortando lo que sobre */
+}
+
+
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dropdown-menu {
+    background-color: #EA5455; /* Color de fondo del desplegable */
+    color: white;
+    padding: 5px;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #E21818; /* Color al pasar el mouse */
+}
+    </style>
+<body class="bg-light">
+
+    <!-- Título principal -->
+    <div class="container text-center my-5">
+        <h1 class="text-rojo1">COMPRAVENTA N&G</h1>
+        <h3 class="text-rojo2">Estos son los coches de los que disponemos en este momento</h3>
+    </div>
+
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-rojo2">
+        <div class="container-fluid justify-content-center">
+            <a class="navbar-brand text-white" href="paginaprincipal.html">Inicio</a>
+            <a class="navbar-brand text-white" href="ventamotos.html">Venta de motos</a>
+            <a class="navbar-brand text-white" href="formulario.html">Formulario Venta</a>
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Contenido principal -->
     <div class="container my-5">
-        <!-- Alert Message -->
-        <div class="alert alert-custom alert-dismissible fade show" role="alert">
-            ¡Bienvenido a COMPRAVENTA N&G! Aquí podrás encontrar los mejores coches y motos del mercado.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-
-        <h3 class="text-center mb-4">Estos son los coches de los que disponemos en este momento</h3>
-        
-        <!-- Cars -->
-        <div class="row g-4">
-            <!-- Car 1 -->
-            <div class="col-md-3">
-                <div class="card car">
-                    <img src="../imagenes/m3.jpg" class="card-img-top" alt="Coche">
-                    <div class="card-body details">
+        <div class="row">
+            <!-- Coche 1 -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <img src="imagenes/m3.jpg" class="card-img-top" alt="BMW M3">
+                    <div class="card-body">
                         <h5 class="card-title">BMW M3</h5>
-                        <p class="card-text"><span>Marca:</span> BMW</p>
-                        <p class="card-text"><span>Modelo:</span> M3</p>
-                        <p class="card-text"><span>CV:</span> 425</p>
-                        <p class="card-text"><span>Color:</span> Verde</p>
-                        <p class="card-text"><span>Año:</span> 2020</p>
-                        <p class="card-text"><span>KMs:</span> 15,000</p>
-                        <!-- Button to trigger the dropdown -->
-                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#detailsCar1" aria-expanded="false" aria-controls="detailsCar1">
-                            Ver más detalles
-                        </button>
-                        <!-- Collapsible content -->
-                        <div class="collapse" id="detailsCar1">
-                            <p><span>Precio:</span> $40,000</p>
-                            <p><span>Descripción:</span> Coche deportivo de alta gama, ideal para quien busca rendimiento y diseño.</p>
+                        <p class="card-text"><span class="fw-bold">Marca:</span> BMW</p>
+                        <p class="card-text"><span class="fw-bold">Modelo:</span> M3</p>
+                        <p class="card-text"><span class="fw-bold">CV:</span> 425</p>
+                        <p class="card-text"><span class="fw-bold">Color:</span> Verde</p>
+                        <p class="card-text"><span class="fw-bold">Año:</span> 2020</p>
+                        <p class="card-text"><span class="fw-bold">KMs:</span> 15,000</p>
+
+                        <!-- Desplegable con más detalles -->
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Ver más detalles
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <p>Este BMW M3 está en perfecto estado, con una revisión reciente y listo para conducir.
+                                Incluye neumáticos nuevos y todas las piezas originales.</p>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Car 2 -->
-            <div class="col-md-3">
-                <div class="card car">
-                    <img src="../imagenes/rs5.jpg" class="card-img-top" alt="Coche">
-                    <div class="card-body details">
+            <!-- Coche 2 -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <img src="imagenes/rs5.jpg" class="card-img-top" alt="Audi RS5">
+                    <div class="card-body">
                         <h5 class="card-title">Audi RS5</h5>
-                        <p class="card-text"><span>Marca:</span> Audi</p>
-                        <p class="card-text"><span>Modelo:</span> RS5</p>
-                        <p class="card-text"><span>CV:</span> 450</p>
-                        <p class="card-text"><span>Color:</span> Verde</p>
-                        <p class="card-text"><span>Año:</span> 2019</p>
-                        <p class="card-text"><span>KMs:</span> 20,000</p>
-                        <!-- Button to trigger the dropdown -->
-                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#detailsCar2" aria-expanded="false" aria-controls="detailsCar2">
-                            Ver más detalles
-                        </button>
-                        <!-- Collapsible content -->
-                        <div class="collapse" id="detailsCar2">
-                            <p><span>Precio:</span> $50,000</p>
-                            <p><span>Descripción:</span> Coche de lujo con gran capacidad de aceleración y confort.</p>
+                        <p class="card-text"><span class="fw-bold">Marca:</span> Audi</p>
+                        <p class="card-text"><span class="fw-bold">Modelo:</span> RS5</p>
+                        <p class="card-text"><span class="fw-bold">CV:</span> 450</p>
+                        <p class="card-text"><span class="fw-bold">Color:</span> Verde</p>
+                        <p class="card-text"><span class="fw-bold">Año:</span> 2019</p>
+                        <p class="card-text"><span class="fw-bold">KMs:</span> 20,000</p>
+
+                        <!-- Desplegable con más detalles -->
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                Ver más detalles
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <p>Este Audi RS5 tiene un sistema de escape deportivo y suspensión mejorada.
+                                Es un coche de alta gama, ideal para disfrutar de viajes largos y emocionantes.</p>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Car 3 -->
-            <div class="col-md-3">
-                <div class="card car">
-                    <img src="../imagenes/amggt.jpg" class="card-img-top" alt="Coche">
-                    <div class="card-body details">
+            <!-- Coche 3 -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <img src="imagenes/amggt.jpg" class="card-img-top" alt="Mercedes AMG GT">
+                    <div class="card-body">
                         <h5 class="card-title">Mercedes AMG GT</h5>
-                        <p class="card-text"><span>Marca:</span> Mercedes</p>
-                        <p class="card-text"><span>Modelo:</span> AMG GT</p>
-                        <p class="card-text"><span>CV:</span> 510</p>
-                        <p class="card-text"><span>Color:</span> Negro</p>
-                        <p class="card-text"><span>Año:</span> 2021</p>
-                        <p class="card-text"><span>KMs:</span> 5,000</p>
-                        <!-- Button to trigger the dropdown -->
-                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#detailsCar3" aria-expanded="false" aria-controls="detailsCar3">
-                            Ver más detalles
-                        </button>
-                        <!-- Collapsible content -->
-                        <div class="collapse" id="detailsCar3">
-                            <p><span>Precio:</span> $70,000</p>
-                            <p><span>Descripción:</span> Coche de alto rendimiento con tecnología avanzada y diseño exclusivo.</p>
+                        <p class="card-text"><span class="fw-bold">Marca:</span> Mercedes</p>
+                        <p class="card-text"><span class="fw-bold">Modelo:</span> AMG GT</p>
+                        <p class="card-text"><span class="fw-bold">CV:</span> 510</p>
+                        <p class="card-text"><span class="fw-bold">Color:</span> Negro</p>
+                        <p class="card-text"><span class="fw-bold">Año:</span> 2021</p>
+                        <p class="card-text"><span class="fw-bold">KMs:</span> 5,000</p>
+
+                        <!-- Desplegable con más detalles -->
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                                Ver más detalles
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                <p>Este Mercedes AMG GT cuenta con un motor V8 biturbo y una velocidad máxima impresionante.
+                                La suspensión es completamente ajustable para un confort superior.</p>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Car 4 -->
-            <div class="col-md-3">
-                <div class="card car">
-                    <img src="../imagenes/911.jpg" class="card-img-top" alt="Coche">
-                    <div class="card-body details">
+            <!-- Coche 4 -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <img src="imagenes/911.jpg" class="card-img-top" alt="Porsche 911">
+                    <div class="card-body">
                         <h5 class="card-title">Porsche 911</h5>
-                        <p class="card-text"><span>Marca:</span> Porsche</p>
-                        <p class="card-text"><span>Modelo:</span> 911</p>
-                        <p class="card-text"><span>CV:</span> 480</p>
-                        <p class="card-text"><span>Color:</span>Negro</p>
-                        <p class="card-text"><span>Año:</span> 2022</p>
-                        <p class="card-text"><span>KMs:</span> 2,500</p>
-                        <!-- Button to trigger the dropdown -->
-                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#detailsCar4" aria-expanded="false" aria-controls="detailsCar4">
-                            Ver más detalles
-                        </button>
-                        <!-- Collapsible content -->
-                        <div class="collapse" id="detailsCar4">
-                            <p><span>Precio:</span> $90,000</p>
-                            <p><span>Descripción:</span> Coche de lujo con una experiencia de conducción inigualable.</p>
+                        <p class="card-text"><span class="fw-bold">Marca:</span> Porsche</p>
+                        <p class="card-text"><span class="fw-bold">Modelo:</span> 911</p>
+                        <p class="card-text"><span class="fw-bold">CV:</span> 480</p>
+                        <p class="card-text"><span class="fw-bold">Color:</span> Negro</p>
+                        <p class="card-text"><span class="fw-bold">Año:</span> 2022</p>
+                        <p class="card-text"><span class="fw-bold">KMs:</span> 2,500</p>
+
+                        <!-- Desplegable con más detalles -->
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
+                                Ver más detalles
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+                                <p>Este Porsche 911 tiene un sistema de tracción total y frenos de carbono-cerámica.
+                                Es ideal para quienes buscan una conducción ágil y precisa en cualquier carretera.</p>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -202,7 +201,8 @@
         </div>
     </div>
 
-    <!-- Bootstrap Bundle JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

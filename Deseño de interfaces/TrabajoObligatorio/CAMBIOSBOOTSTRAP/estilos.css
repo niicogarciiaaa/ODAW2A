@@ -1,0 +1,81 @@
+/* Colores personalizados */
+.bg-rojo1 {
+    background-color: #E21818;
+}
+
+.bg-rojo2 {
+    background-color: #EA5455;
+}
+
+.bg-beige1 {
+    background-color: #E4DCCF;
+}
+
+.bg-beige2 {
+    background-color: #F9F5EB;
+}
+
+.text-rojo1 {
+    color: #E21818;
+}
+
+.text-rojo2 {
+    color: #EA5455;
+}
+
+.text-beige1 {
+    color: #E4DCCF;
+}
+
+.text-beige2 {
+    color: #F9F5EB;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo de las cajas */
+.box {
+    position: relative;
+    margin-bottom: 20px;
+    background-color: #E4DCCF; /* Beige1 */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Efecto escalera con desplazamiento */
+.left {
+    margin-top: 0;
+    margin-left: -80px;
+}
+
+.center {
+    margin-top: 40px; /* Desplazamiento hacia abajo */
+    margin-left: 100px;
+}
+
+.right {
+    margin-top: 80px; /* Desplazamiento hacia abajo */
+    margin-left: 200px;
+}
+
+@media (max-width: 800px) {
+    .left {
+        margin-top: 0;
+    }
+    
+    .center {
+        margin-top: 10px; /* Desplazamiento hacia abajo */
+        margin-left: 100px;
+    }
+    
+    .right {
+        margin-top: 40px; /* Desplazamiento hacia abajo */
+        margin-left: 200px;
+    }
+}
