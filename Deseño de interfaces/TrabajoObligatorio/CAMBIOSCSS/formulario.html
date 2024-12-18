@@ -8,7 +8,8 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #F9F5EB; 
-            padding: 20px;
+            
+            margin: 0%;
         }
 
         h1 {
@@ -59,17 +60,25 @@
             font-size: 16px;
             
         }
-        nav a {
-            display: inline-block; /* Hace que el fondo solo ocupe el ancho del texto */
-            text-decoration: none;
-            color: black;
-            background-color: #E4DCCF;
-            font-family: Arial;
-            border-radius: 5px; /* Bordes redondeados opcionales */
-            margin: 0 10px; /* Espaciado entre los enlaces */
-            width: 100px;
-            padding: 0px;
-        }
+        nav {
+        display: flex; /* Usamos flexbox para que los elementos se distribuyan de manera uniforme */
+        justify-content: center; /* Centra los elementos horizontalmente */
+        align-items: center; /* Alinea los elementos verticalmente */
+    }
+    
+    nav a {
+        display: flex; /* Usamos flex para alinear el contenido dentro de los enlaces */
+        justify-content: center; /* Centra el texto horizontalmente */
+        align-items: center; /* Centra el texto verticalmente */
+        text-decoration: none; /* Elimina el subrayado de los enlaces */
+        color: black; /* Color del texto */
+        background-color: #E4DCCF; /* Fondo beige suave */
+        font-family: Arial; /* Fuente Arial */
+        border-radius: 5px; /* Bordes redondeados */
+        margin: 0 10px; /* Espacio entre los enlaces */
+        width: 100px; /* Ancho fijo para que todos los botones tengan el mismo tamaño */
+        height: 50px; /* Altura fija */
+    }
 
         nav a li:hover {
              color: white; /* Cambiar el color del texto */

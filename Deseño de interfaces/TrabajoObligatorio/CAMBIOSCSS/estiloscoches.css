@@ -36,16 +36,24 @@ a, li {
 
 /* Estilos de navegación */
 
+nav {
+    display: flex; /* Usamos flexbox para que los elementos se distribuyan de manera uniforme */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Alinea los elementos verticalmente */
+}
+
 nav a {
-    display: inline-block; 
-    text-decoration: none; 
-    color: black; 
-    background-color: #E4DCCF; 
-    font-family: Arial; 
-    border-radius: 5px; 
-    margin: 0 10px; 
-    width: 100px; 
-    padding: 0px; 
+    display: flex; /* Usamos flex para alinear el contenido dentro de los enlaces */
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: black; /* Color del texto */
+    background-color: #E4DCCF; /* Fondo beige suave */
+    font-family: Arial; /* Fuente Arial */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 0 10px; /* Espacio entre los enlaces */
+    width: 100px; /* Ancho fijo para que todos los botones tengan el mismo tamaño */
+    height: 50px; /* Altura fija */
 }
 /* Las propiedades CSS aplicadas a los enlaces de navegación hacen que se configuren como bloques en línea,
    permitiendo un diseño flexible y alineado.
