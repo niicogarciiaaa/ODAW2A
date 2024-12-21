@@ -34,6 +34,16 @@
             background-color: #E21818;
             border-color: #E21818;
         }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1;
+        }
 
         .btn-primary:hover {
             background-color: #EA5455;
@@ -99,7 +109,58 @@
             background-color: #FFD700; /* Amarillo */
             border-color: #FFD700;
         }
+        #services img {
+            width: 100px;
+        }
+       
+        .fixed-size {
+            height: 300px; /* Ajusta esta altura según tus necesidades */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center; /* Centra el contenido horizontalmente */
+            text-align: center; /* Centra el texto */
+        }
+        .fixed-size img {
+            max-height: 100px; /* Ajusta la altura máxima de la imagen */
+            margin-bottom: 15px; /* Añade un margen inferior para separar la imagen del texto */
+        }
+        .fixed-size p {
+            flex-grow: 1;
+        }
+        
+        a{
+            text-decoration: none;
+            border: 1px solid blue;
+            padding: 5px;
+        }
+        .bg-footer {
+        background-color: #f8f9fa; /* Ajusta según tus necesidades */
+    }
+    .bg-subfooter {
+        background-color: #f8f9fa; /* Ajusta según tus necesidades */
+    }
+    .bg-orange {
+        background-color: orange;
+    }
+    .text-white {
+        color: white;
+    }
+    footer{
+        margin: 0;
+    }
+    
     </style>
+    <script>
+        window.addEventListener('scroll', function() {
+            var subfooter = document.getElementById('subfooter');
+            if (window.scrollY > 500) { // Ajusta este valor según tus necesidades
+                subfooter.style.display = 'block';
+            } else {
+                subfooter.style.display = 'none';
+            }
+        });
+    </script>
 </head>
 <body>
 
@@ -107,9 +168,9 @@
     <div class="container-fluid bg-color-header">
         <div class="row bg-limit py-3">
             <div class="col-12 col-md-auto my-auto">
-                <a href="https://kfmmotorsport.com/">
+               
                     <h1 class="text-white">KFM MOTORSPORT</h1>
-                </a>
+                
             </div>
         </div>
     </div>
@@ -174,77 +235,89 @@
 <!-- Sección de servicios -->
 <section id="services" class="container my-5">
     <h2 class="text-center text-primary mb-4">Nuestros Servicios</h2>
-    <div class="row">
-        <div class="col-md-6">
-            <img src="img/freno.png" alt="">
+    <div class="row justify-content-center">
+        <div class="col-md-3 text-center fixed-size">
+            <img src="img/freno.png" alt="" class="img-fluid mb-3">
             <h3>Frenos</h3>
             <p>Realizamos todo tipo de intervenciones sobre el sistema de frenos de su vehículo, sustitución de líquido, cambio de pastillas de freno, reparación de desequilibrios durante la frenada, etc.</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3 text-center fixed-size">
+            <img src="img/inyector.png" alt="" class="img-fluid mb-3">
             <h3>Inyección de gasolina</h3>
             <p>Diagnosticamos, mantenemos y reparamos los diferentes sistemas de inyección de gasolina, desde los más antiguos hasta los de última generación.</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3 text-center fixed-size">
+            <img src="img/inyector.png" alt="" class="img-fluid mb-3">
             <h3>Inyección diésel</h3>
             <p>Diagnosticamos, mantenemos y reparamos (mecánica, electricidad y electrónica) los sistemas de inyección diésel, desde los equipados con bombas de inyección rotativas hasta los de última generación.</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3 text-center fixed-size">
+            <img src="img/limpieza.png" alt="" class="img-fluid mb-3">
             <h3>Limpieza integral</h3>
             <p>Limpieza de tapicerías, alfombrillas, restauración de puertas y salpicaderos, maleteros, pulido y encerado de pintura, tratamiento de arañazos, etc…</p>
         </div>
     </div>
+                <p id="TodosServicios" class="text-center mt-5"><a href="servicios.html">Nuestros Servicios</a></p>
 </section>
 
-    <!-- Subfooter -->
-    <div class="row px-3 py-5 mb-5 bg-subfooter">
+    
+
+    <!-- Footer -->
+    <!-- Formulario de suscripción -->
+<section class="container my-5">
+    <div class="row bg-limit">
+        <div class="col-12">
+            <p class="title-offer">¡No se pierda ninguna de nuestras ofertas!</p>
+            <p>Inscríbase a nuestro boletín semanal de novedades y promociones</p>
+            <form name="subscribeType" method="post" action="https://kfmmotorsport.com/page/app/subscribe" class="row form-contract">
+                <div class="col-12 col-md-4 form-floating form-group mb-3">
+                    <input type="text" id="subscribeType_firstname" name="subscribeType[firstname]" required="required" placeholder="Nombre" class="form-control form-control-lg" />
+                    <label for="subscribeType_firstname">Nombre</label>
+                </div>
+                <div class="col-12 col-md-4 form-floating form-group mb-3">
+                    <input type="text" id="subscribeType_surname" name="subscribeType[surname]" required="required" placeholder="Apellidos" class="form-control form-control-lg" />
+                    <label for="subscribeType_surname">Apellidos</label>
+                </div>
+                <div class="col-12 col-md-4 form-floating form-group mb-3">
+                    <input type="email" id="subscribeType_email" name="subscribeType[email]" required="required" placeholder="Email" class="form-control form-control-lg" />
+                    <label for="subscribeType_email">Email</label>
+                </div>
+                <div class="col-12 form-group mt-3">
+                    <label class="txt-checkbox" for="subscribeType_termsOfUse">
+                        He leído y acepto la <a href="https://kfmmotorsport.com/page/app/gdpr/privacy-policy" target="_blank"><strong>Política de Privacidad</strong></a>.
+                        <input type="checkbox" id="subscribeType_termsOfUse" name="subscribeType[termsOfUse]" required="required" />
+                    </label>
+                </div>
+                <div class="col-12 form-group">
+                    <button type="submit" class="btn btn-primary mx-auto mt-5">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="">
+    <div class="row px-3 py-5 mb-5 bg-subfooter bg-orange">
         <div class="col">
             <div class="row bg-limit px-xl-0">
-                <div class="col-12 col-md-4 one-subfooter mb-5 mb-md-0">
+                <div class="col-12 col-md-4 one-subfooter mb-5 mb-md-0 text-white">
                     <p>T. 881895771</p>
                     <p>Vicente Aleixandre, 45 Bajo</p>
                     <p>15009 Coruña, A Coruña</p>
+                    <p>© Nicolás García Moreira</p>
                 </div>
                 <div class="col-12 col-md-4 two-subfooter mb-5 mb-md-0"></div>
-                <div class="col-12 col-md-4 three-subfooter"></div>
+                <div class="col-12 col-md-4 three-subfooter d-flex justify-content-end">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019019556634!2d-8.4028053!3d43.3468244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e7ca1b8d1acc9%3A0xbcd1f5046eb7fbfd!2sKFM%20Motor%20Sport!5e0!3m2!1ses!2ses!4v1600000000000!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="row px-3 py-5 bg-footer">
-        <div class="col">
-            <div class="row bg-limit">
-                <div class="col-12">
-                    <p class="title-offer">¡No se pierda ninguna de nuestras ofertas!</p>
-                    <p>Inscríbase a nuestro boletín semanal de novedades y promociones</p>
-                    <form name="subscribeType" method="post" action="https://kfmmotorsport.com/page/app/subscribe" class="row form-contract">
-                        <div class="col-12 col-md-4 form-floating form-group mb-3">
-                            <input type="text" id="subscribeType_firstname" name="subscribeType[firstname]" required="required" placeholder="Nombre" class="form-control form-control-lg" />
-                            <label for="subscribeType_firstname">Nombre</label>
-                        </div>
-                        <div class="col-12 col-md-4 form-floating form-group mb-3">
-                            <input type="text" id="subscribeType_surname" name="subscribeType[surname]" required="required" placeholder="Apellidos" class="form-control form-control-lg" />
-                            <label for="subscribeType_surname">Apellidos</label>
-                        </div>
-                        <div class="col-12 col-md-4 form-floating form-group mb-3">
-                            <input type="email" id="subscribeType_email" name="subscribeType[email]" required="required" placeholder="Email" class="form-control form-control-lg" />
-                            <label for="subscribeType_email">Email</label>
-                        </div>
-                        <div class="col-12 form-group mt-3">
-                            <label class="txt-checkbox" for="subscribeType_termsOfUse">
-                                He leído y acepto la <a href="https://kfmmotorsport.com/page/app/gdpr/privacy-policy" target="_blank"><strong>Política de Privacidad</strong></a>.
-                                <input type="checkbox" id="subscribeType_termsOfUse" name="subscribeType[termsOfUse]" required="required" />
-                            </label>
-                        </div>
-                        <div class="col-12 form-group">
-                            <button type="submit" class="btn btn-primary mx-auto mt-5">Enviar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
