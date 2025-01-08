@@ -1,0 +1,31 @@
+/* Estilo para los enlaces */
+a {
+    color: green;
+    text-decoration: none;
+}
+
+/* Estilo al pasar el ratón sobre el enlace */
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+/* Estilo para enlaces visitados */
+a:visited {
+    color: black;
+    font-weight: bold;
+}
+
+/* Estilo para los elementos de lista */
+li {
+    font-style: italic;
+}
+.impar {
+    color: black; /* Ejemplo de estilo */
+    text-decoration: underline;
+}
+
+.par {
+    color: gray; /* Ejemplo de estilo */
+    text-decoration: none;
+}
