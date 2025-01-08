@@ -1,0 +1,114 @@
+/* Estilos generales */
+body {
+    background-color: #F9F5EB;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Título */
+h1 {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h3 {
+    text-align: left;
+    color: red;
+}
+
+/* Contenedor principal */
+.general {
+    margin-left: 10%;
+    text-align: center;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+
+/* Navegación */
+a, li {
+    text-decoration: none;
+    color: black;
+    display: inline;
+    margin-right: 2%;
+    background-color: #E4DCCF;
+    font-family: Arial;
+}
+
+nav {
+    display: flex; /* Usamos flexbox para que los elementos se distribuyan de manera uniforme */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Alinea los elementos verticalmente */
+}
+
+nav a {
+    display: flex; /* Usamos flex para alinear el contenido dentro de los enlaces */
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: black; /* Color del texto */
+    background-color: #E4DCCF; /* Fondo beige suave */
+    font-family: Arial; /* Fuente Arial */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 0 10px; /* Espacio entre los enlaces */
+    width: 100px; /* Ancho fijo para que todos los botones tengan el mismo tamaño */
+    height: 50px; /* Altura fija */
+}
+
+nav a li:hover {
+    color: white;
+}
+
+/* Efecto Parallax */
+.parallax {
+    /* Imagen de fondo */
+    margin-top: 10px;
+    background-image: url('imagenes/concesionario1.jpg'); /* Asegúrate de que la imagen esté en la carpeta correcta */
+    height: 500px; /* Altura de la sección parallax */
+    background-attachment: fixed; /* Fija el fondo mientras se desplaza */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Contenido de la sección parallax */
+.parallax-content {
+    position: absolute;
+    top: 50%; /* Centra el contenido verticalmente */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Sección de contenido general */
+#divImg {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Contenedor de la imagen con parallax */
+#divImg img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+#divImg img:hover {
+    transform: scale(1.05); /* Efecto hover */
+}
+
+/* Texto de contenido */
+p {
+    text-align: justify;
+}
+
+source {
+    width: 200px;
+}

@@ -1,0 +1,188 @@
+/* Estilos generales */
+h1, h3 {
+    text-align: center; /* Centra el texto de los encabezados */
+    color: red; /* Cambia el color del texto a rojo */
+}
+
+body {
+    background-color: #F9F5EB; /* Establece un color de fondo beige claro para el cuerpo */
+}
+
+#general {
+    display: flex; 
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+/* El diseño flexbox en CSS ofrece un control preciso sobre la disposición de elementos.
+  En este caso, distribuye el espacio uniformemente alrededor de los elementos,
+  permitiendo que se envuelvan a la siguiente línea si es necesario.
+  Esto crea un diseño fluido y adaptable. El espacio de 20 píxeles entre los elementos añade una separación visual clara,
+   mejorando la legibilidad y el aspecto general del diseño. */
+
+/* Estilos para enlaces y elementos de lista */
+a, li {
+    text-decoration: none; 
+    color: black; 
+    display: inline; 
+    background-color: #E4DCCF; 
+    font-family: Arial; 
+}
+/*En este caso, se elimina el subrayado predeterminado de los enlaces, creando un aspecto más limpio y moderno.
+ El color del texto se establece en negro, garantizando una óptima legibilidad.
+ La visualización en línea permite que estos elementos se alineen horizontalmente, ideal para menús de navegación compactos.
+ Un fondo beige suave se aplica, diferenciando sutilmente estos elementos del contenido circundante.
+ Finalmente, la fuente Arial proporciona un aspecto consistente y fácil de leer.*/
+
+/* Estilos de navegación */
+
+nav {
+    display: flex; /* Usamos flexbox para que los elementos se distribuyan de manera uniforme */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Alinea los elementos verticalmente */
+}
+
+nav a {
+    display: flex; /* Usamos flex para alinear el contenido dentro de los enlaces */
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: black; /* Color del texto */
+    background-color: #E4DCCF; /* Fondo beige suave */
+    font-family: Arial; /* Fuente Arial */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 0 10px; /* Espacio entre los enlaces */
+    width: 100px; /* Ancho fijo para que todos los botones tengan el mismo tamaño */
+    height: 50px; /* Altura fija */
+}
+/* Las propiedades CSS aplicadas a los enlaces de navegación hacen que se configuren como bloques en línea,
+   permitiendo un diseño flexible y alineado.
+   Se elimina el subrayado predeterminado y se establece el texto en color negro, mejorando la legibilidad.
+   Un fondo beige suave y esquinas redondeadas añaden un toque estético distintivo.
+   La fuente Arial asegura una apariencia consistente y moderna.
+   Se aplica un margen horizontal y un ancho fijo, creando una disposición uniforme y ordenada. 
+   La eliminación del relleno interno ajusta finamente el espacio dentro de cada enlace.
+   En conjunto, estas propiedades crean una barra de navegación visualmente atractiva y funcionalmente eficiente. */
+
+/* Estilo de los enlaces en el menú de navegación al pasar el ratón */
+nav a li:hover {
+    color: white; /* Cambia el color del texto a blanco cuando se pasa el ratón sobre un enlace */
+}
+
+/* Estilo de las tarjetas */
+.car {
+    text-align: center; 
+    margin: 15px; 
+    width: 200px; 
+    border: 2px solid #333; 
+    padding: 15px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    background-color: #F9F5EB; 
+    opacity: 0; 
+    transform: translateY(50px); 
+    animation: fadeIn 1s ease-out forwards, rebote 0.5s ease-in-out 2s forwards; 
+}
+/* Este código CSS estiliza las tarjetas centrando su contenido, añadiendo un margen de 15px y un ancho fijo de 200px.
+   Se aplica un borde gris oscuro de 2px, esquinas redondeadas y una sombra suave para darle profundidad.
+   Inicialmente invisibles y desplazadas 50px hacia abajo, las tarjetas se animan con un efecto de aparición,
+   rebote y borde resaltado.*/
+
+/* Retrasos en la animación para cada tarjeta */
+.car:nth-child(1) {
+    animation-delay: 0s; /* Sin retraso para la primera tarjeta */
+}
+.car:nth-child(2) {
+    animation-delay: 0.2s; /* Retraso de 0.2s para la segunda tarjeta */
+}
+.car:nth-child(3) {
+    animation-delay: 0.4s; /* Retraso de 0.4s para la tercera tarjeta */
+}
+.car:nth-child(4) {
+    animation-delay: 0.6s; /* Retraso de 0.6s para la cuarta tarjeta */
+}
+
+/* Estilo de las imágenes dentro de las tarjetas */
+.car img {
+    margin-top: 15px; 
+    width: 200px; 
+    height: 130px; 
+    margin-bottom: 10px; 
+    border-radius: 10px; 
+}
+/* Este código CSS aplica un margen superior de 15px a las imágenes,
+ un ancho fijo de 200px y una altura fija de 130px para mantener la uniformidad.
+ También se añade un margen inferior de 10px para separarlas de otros elementos
+ y se redondean las esquinas para suavizar su apariencia.*/
+
+/* Estilo del párrafo dentro de las tarjetas */
+.car p {
+    margin: 10px 0; 
+    color: #E21818; 
+}
+
+/* Añade un margen de 10px arriba y abajo, y el color rojo al texto*/
+
+/* Estilo de los span dentro de las tarjetas */
+.car span {
+    font-weight: bold; /* Hace que el texto dentro de un <span> sea negrita */
+    color: black; /* Establece el color del texto dentro de un <span> en negro */
+}
+
+/* Keyframes para la animación de fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comienza con las tarjetas invisibles */
+        transform: translateY(50px); /* Comienza desplazadas hacia abajo */
+    }
+    to {
+        opacity: 1; /* Hace que las tarjetas se vuelvan visibles */
+        transform: translateY(0); /* Las coloca en su posición original */
+    }
+}
+
+/* Keyframes para la animación de rebote */
+@keyframes rebote {
+    0%, 100% {
+        transform: translateY(0); /* Mantiene la tarjeta en su posición inicial al principio y al final */
+    }
+    50% {
+        transform: translateY(-15px); /* Hace que la tarjeta suba ligeramente durante la animación */
+    }
+}
+
+/* Keyframes para la animación de borde resaltado */
+@keyframes bordeResaltado {
+    0% {
+        border-color: red; /* El borde comienza en rojo */
+    }
+    25% {
+        border-color: green; /* El borde cambia a verde */
+    }
+    50% {
+        border-color: blue; /* El borde cambia a azul */
+    }
+    75% {
+        border-color: orange; /* El borde cambia a naranja */
+    }
+    80% {
+        border-color: purple; /* El borde cambia a morado */
+    }
+    100% {
+        border-color: black; /* El borde cambia a morado */
+    }
+}
+
+/* Efecto hover */
+.car:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    animation: bordeResaltado 2s infinite ease-in-out; 
+    z-index: 1; 
+    opacity: 1; 
+}
+/* Al pasar el ratón sobre la tarjeta, se aumenta ligeramente su tamaño, lo que crea un efecto de ampliación. 
+Además, la sombra alrededor de la tarjeta se intensifica, dando un efecto de profundidad. 
+Se inicia una animación infinita que cambia el color del borde, atrayendo más la atención hacia la tarjeta.
+La tarjeta se coloca encima de las demás, asegurando que quede en primer plano, 
+y se vuelve completamente visible si antes estaba oculta. */
